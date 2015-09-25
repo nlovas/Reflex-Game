@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Select Number of Players"
+        android:id="@+id/selectnumplayerstextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="30sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:id="@+id/twoplayersbutton"
+        android:layout_marginTop="29dp"
+        android:background="#8CC58C"
+        android:height="100dp"
+        android:textSize="25sp"
+        android:width="150dp"
+        android:layout_below="@+id/selectnumplayerstextView"
+        android:layout_alignStart="@+id/threeplayersbutton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:id="@+id/threeplayersbutton"
+        android:background="#8CC58C"
+        android:width="150dp"
+        android:height="100dp"
+        android:textSize="25sp"
+        android:layout_below="@+id/twoplayersbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:id="@+id/fourplayersbutton"
+        android:background="#8CC58C"
+        android:height="100dp"
+        android:textSize="25sp"
+        android:width="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/threeplayersbutton"
+        android:layout_alignStart="@+id/threeplayersbutton" />
+</RelativeLayout>
