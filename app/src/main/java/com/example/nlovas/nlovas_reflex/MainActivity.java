@@ -2,7 +2,7 @@ package com.example.nlovas.nlovas_reflex;
 
 /*
 <Nlovas-reflex is a reflex testing app for single and multiple players>
-        Copyright (C) <2015>  <Nicole Lovas>
+        Copyright (C) <2015>  <Nicole Lovas, nlovas@ualberta.ca>
 
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
@@ -19,26 +19,28 @@ package com.example.nlovas.nlovas_reflex;
 */
 
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
+
+
+    public void showprep(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, PrepActivity.class);
+        Toast.makeText(getApplicationContext(), "Wow!!!.",
+                Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        singleplayerbutton.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                setResult(RESULT_OK);
-
-            }
-        });
     }
 
     @Override
