@@ -23,5 +23,6 @@
         android:layout_marginTop="122dp"
         android:textSize="25sp"
         android:height="60dp"
-        android:background="#8CC58C" />
+        android:background="#8CC58C"
+        android:width="200dp" />
 </RelativeLayout>

@@ -20,6 +20,26 @@
             android:name=".PrepActivity"
             android:label="@string/title_activity_prep" >
         </activity>
+        <activity
+            android:name=".GameshowActivity"
+            android:label="@string/title_activity_gameshow" >
+        </activity>
+        <activity
+            android:name=".StatselectActivity"
+            android:label="@string/title_activity_statselect" >
+        </activity>
+        <activity
+            android:name=".ReadyscreenActivity"
+            android:label="@string/title_activity_prepscreen" >
+        </activity>
+        <activity
+            android:name=".TwoplayerActivity"
+            android:label="@string/title_activity_twoplayer" >
+        </activity>
+        <activity
+            android:name=".GameshowresultsActivity"
+            android:label="@string/title_activity_gameshowresults" >
+        </activity>
     </application>
 
 </manifest>

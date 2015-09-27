@@ -32,8 +32,22 @@ public class MainActivity extends ActionBarActivity {
 
     public void showprep(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, PrepActivity.class);
-        Toast.makeText(getApplicationContext(), "Wow!!!.",
-                Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(), "Wow!!!.",  (testing code)
+         //       Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+    }
+
+    public void statselect(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, StatselectActivity.class);
+       // Toast.makeText(getApplicationContext(), "Wow!!!.",
+         //       Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+    }
+
+    public void gsmode(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, GameshowActivity.class);
+        // Toast.makeText(getApplicationContext(), "Wow!!!.",
+        //       Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 

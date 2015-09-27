@@ -4,4 +4,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_prep">Prepare</string>
+    <string name="title_activity_gameshow">GameshowActivity</string>
+    <string name="title_activity_statselect">StatselectActivity</string>
+    <string name="title_activity_prepscreen">PrepscreenActivity</string>
+    <string name="title_activity_twoplayer">TwoplayerActivity</string>
+    <string name="title_activity_gameshowresults">GameshowresultsActivity</string>
+    <string name="title_activity_select_players">SelectPlayersActivity</string>
 </resources>

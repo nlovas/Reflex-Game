@@ -13,7 +13,8 @@
         android:width="350dp"
         android:height="200dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="p1click"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -26,5 +27,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="34dp"
         android:width="350dp"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:onClick="p1click"/>
 </RelativeLayout>

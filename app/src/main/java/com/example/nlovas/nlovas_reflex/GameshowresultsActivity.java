@@ -1,31 +1,22 @@
 package com.example.nlovas.nlovas_reflex;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class PrepActivity extends ActionBarActivity {
-
-    public void prepok(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, ReadyscreenActivity.class);
-        // Toast.makeText(getApplicationContext(), "Wow!!!.",  (testing code)
-        //       Toast.LENGTH_SHORT).show();
-        startActivity(intent);
-    }
+public class GameshowresultsActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.prepscreen);
+        setContentView(R.layout.activity_gameshowresults);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_prep, menu);
+        getMenuInflater().inflate(R.menu.menu_gameshowresults, menu);
         return true;
     }
 
