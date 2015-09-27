@@ -28,8 +28,10 @@ import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
-
-
+/*
+The first activity, shows the different play options and
+the statistics option.
+  */
     public void showprep(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, PrepActivity.class);
        // Toast.makeText(getApplicationContext(), "Wow!!!.",  (testing code)

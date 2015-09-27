@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class GameshowresultsActivity extends ActionBarActivity {
 
@@ -11,6 +12,10 @@ public class GameshowresultsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameshowresults);
+
+        String winner = getIntent().getStringExtra("winnername");
+        TextView output = (TextView)findViewById(R.id.twoplayeroutput);
+        output.setText(winner);
     }
 
     @Override

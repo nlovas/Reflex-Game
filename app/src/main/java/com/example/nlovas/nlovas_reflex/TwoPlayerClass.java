@@ -5,6 +5,10 @@ package com.example.nlovas.nlovas_reflex;
  */
 public class TwoPlayerClass {
 
+    /*
+    Storing the scores for p1 and p2 in two-player mode
+     */
+
     private int p1sum;
     private int p2sum;
 
