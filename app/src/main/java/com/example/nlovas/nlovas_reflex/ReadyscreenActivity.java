@@ -22,16 +22,16 @@ public class ReadyscreenActivity extends ActionBarActivity {
 
     public void setTimerstarted() {
         timerstarted = !timerstarted;
-    }
+    } //toggles timerstarted to true/false
 
     //currently goes back to itself when clicked
     public void clickedred(View view) { //http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html , 2015-09-27
-        if (timerstarted == true) {
+        if (timerstarted == true) { //if the timer is still counting down, then your click is too early
             countdowntimer.cancel();
             timerstarted = false;
             Intent intent = new Intent(this, ToosoonActivity.class);
             startActivity(intent);
-        } else {
+        } else if (timerstarted == false) { //if the timer is done, continue to the next screen to play
 
         }
 
@@ -44,7 +44,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
         setContentView(R.layout.readybutton);
 
         readyb = (Button) this.findViewById(R.id.readybutton);
-        readyb.setOnClickListener((View.OnClickListener) this);
+        //readyb.setOnClickListener((View.OnClickListener) this);
         //timerstarted = false;
 
         countdowntimer = new Cdowntimer((long) limit, 100); //http://developer.android.com/reference/android/os/CountDownTimer.html  2015-09-27
@@ -52,27 +52,6 @@ public class ReadyscreenActivity extends ActionBarActivity {
         //also http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html 2015-09-27
         countdowntimer.start();
         timerstarted = true;
-
-
-
-/*
-        Button readybutton = (Button) findViewById(R.id.readybutton); //from in-class lab University of Alberta, 2015-09-27
-
-        while((System.currentTimeMillis() - starttime)<limit){
-
-            readybutton.setOnClickListener(new View.OnClickListener() {
-
-                public void onClick(View v) {   //from in-class lab University of Alberta, 2015-09-27
-                    // setResult(RESULT_OK);
-                    Intent intent = new Intent(this, ClickthebuttonActivity.class);
-                    startActivity(intent);
-                }
-            });
-
-        }
-        Toast.makeText(getApplicationContext(), "Wow!!!.",
-                Toast.LENGTH_SHORT).show();
-*/
 
     }
 
@@ -109,6 +88,8 @@ public class ReadyscreenActivity extends ActionBarActivity {
         @Override
         public void onFinish() {
             setTimerstarted();
+            readyb.setText("Go!"); //Prof Scott Vanselow https://www.youtube.com/watch?v=OWLOMCvtSC8 2015-09-28
+
         }
 
         @Override
