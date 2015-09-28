@@ -40,6 +40,14 @@
             android:name=".GameshowresultsActivity"
             android:label="@string/title_activity_gameshowresults" >
         </activity>
+        <activity
+            android:name=".ClickthebuttonActivity"
+            android:label="@string/title_activity_clickthebutton" >
+        </activity>
+        <activity
+            android:name=".ToosoonActivity"
+            android:label="@string/title_activity_toosoon" >
+        </activity>
     </application>
 
 </manifest>

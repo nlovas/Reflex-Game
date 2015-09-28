@@ -10,4 +10,6 @@
     <string name="title_activity_twoplayer">TwoplayerActivity</string>
     <string name="title_activity_gameshowresults">GameshowresultsActivity</string>
     <string name="title_activity_select_players">SelectPlayersActivity</string>
+    <string name="title_activity_clickthebutton">ClickthebuttonActivity</string>
+    <string name="title_activity_toosoon">ToosoonActivity</string>
 </resources>

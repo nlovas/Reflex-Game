@@ -4,28 +4,19 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-public class GameshowresultsActivity extends ActionBarActivity {
-
-    /*
-    shows who pressed first. That's all
-     */
+public class ClickthebuttonActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gameshowresults);
-
-        String winner = getIntent().getStringExtra("winnername");
-        TextView output = (TextView)findViewById(R.id.twoplayeroutput);
-        output.setText(winner);
+        setContentView(R.layout.clickbutton);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_gameshowresults, menu);
+        getMenuInflater().inflate(R.menu.menu_clickthebutton, menu);
         return true;
     }
 

@@ -8,6 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
 public class TwoplayerActivity extends ActionBarActivity {
 
 
@@ -21,18 +26,20 @@ public class TwoplayerActivity extends ActionBarActivity {
 
     public void p1click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
-        // Toast.makeText(getApplicationContext(), "Wow!!!.",  (testing code)
-        //       Toast.LENGTH_SHORT).show();
         twopgame.setP1sum(); //player 1 gets a point
 
-        intent.putExtra("winnername","Player 1");
+        //Gson gson = new Gson();
+        //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-27
+        //MyType target = new MyType();
+        //String json = gson.toJson(twopgame); // serializes target to Json
+        //MyType target2 = gson.fromJson(json, MyType.class); // deserializes json into target2
+
+        intent.putExtra("winnername","Player 1"); //learned how to pass strings using intents with https://youtu.be/ViwazAAR-vE, 2015-09-27
         startActivity(intent);
     }
 
     public void p2click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
-        // Toast.makeText(getApplicationContext(), "Wow!!!.",  (testing code)
-        //       Toast.LENGTH_SHORT).show();
         twopgame.setP2sum(); //player 2 gets a point
 
         intent.putExtra("winnername","Player 2");
