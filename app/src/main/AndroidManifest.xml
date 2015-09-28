@@ -44,6 +44,10 @@
             android:name=".ToosoonActivity"
             android:label="@string/title_activity_toosoon" >
         </activity>
+        <activity
+            android:name=".YourtimewasActivity"
+            android:label="@string/title_activity_yourtimewas" >
+        </activity>
     </application>
 
 </manifest>

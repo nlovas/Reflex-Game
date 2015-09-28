@@ -1,11 +1,23 @@
 package com.example.nlovas.nlovas_reflex;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class ToosoonActivity extends ActionBarActivity {
+
+    /*
+    When the user clicks too soon, they're taken to this activity
+    clicking 'restart' sends them back to the preparation screen
+     */
+
+    public void clickrestart(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, PrepActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

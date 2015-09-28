@@ -19,12 +19,13 @@ public class ReadyscreenActivity extends ActionBarActivity {
     private CountDownTimer countdowntimer;
     private boolean timerstarted;
     private Button readyb;
+    public TimeClass time = new TimeClass(); //for getting latency
 
     public void setTimerstarted() {
         timerstarted = !timerstarted;
     } //toggles timerstarted to true/false
 
-    //currently goes back to itself when clicked
+
     public void clickedred(View view) { //http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html , 2015-09-27
         if (timerstarted == true) { //if the timer is still counting down, then your click is too early
             countdowntimer.cancel();
@@ -32,7 +33,13 @@ public class ReadyscreenActivity extends ActionBarActivity {
             Intent intent = new Intent(this, ToosoonActivity.class);
             startActivity(intent);
         } else if (timerstarted == false) { //if the timer is done, continue to the next screen to play
+            time.endCapture();
+            time.setTime();
 
+            readyb.setText("Your time was: " + (int)time.getTime() + "ms"); //problem solved with http://stackoverflow.com/questions/17958887/make-a-button-change-value-of-a-textview 2015-09-28
+            //Intent intent = new Intent(this, YourtimewasActivity.class);
+            //intent.putExtra("reactiontime", (int)time.getTime());
+           // startActivity(intent);
         }
 
     }
@@ -45,7 +52,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
 
         readyb = (Button) this.findViewById(R.id.readybutton);
         //readyb.setOnClickListener((View.OnClickListener) this);
-        //timerstarted = false;
+
 
         countdowntimer = new Cdowntimer((long) limit, 100); //http://developer.android.com/reference/android/os/CountDownTimer.html  2015-09-27
         //idea suggested by Linda Zhang, Second resource shared by Jillian Lovas
@@ -89,7 +96,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
         public void onFinish() {
             setTimerstarted();
             readyb.setText("Go!"); //Prof Scott Vanselow https://www.youtube.com/watch?v=OWLOMCvtSC8 2015-09-28
-
+            time.startCapture();
         }
 
         @Override

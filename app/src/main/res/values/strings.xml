@@ -12,4 +12,5 @@
     <string name="title_activity_select_players">SelectPlayersActivity</string>
     <string name="title_activity_clickthebutton">ClickthebuttonActivity</string>
     <string name="title_activity_toosoon">ToosoonActivity</string>
+    <string name="title_activity_yourtimewas">YourtimewasActivity</string>
 </resources>

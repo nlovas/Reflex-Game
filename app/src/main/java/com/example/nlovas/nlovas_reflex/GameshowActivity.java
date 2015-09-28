@@ -15,8 +15,6 @@ public class GameshowActivity extends ActionBarActivity {
 
     public void twoplayersselected(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, TwoplayerActivity.class);
-        // Toast.makeText(getApplicationContext(), "Wow!!!.",  (testing code)
-        //       Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 
