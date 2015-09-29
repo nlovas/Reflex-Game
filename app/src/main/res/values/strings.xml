@@ -13,4 +13,6 @@
     <string name="title_activity_clickthebutton">ClickthebuttonActivity</string>
     <string name="title_activity_toosoon">ToosoonActivity</string>
     <string name="title_activity_yourtimewas">YourtimewasActivity</string>
+    <string name="title_activity_threeplayer">ThreeplayerActivity</string>
+    <string name="title_activity_fourplayer">FourplayerActivity</string>
 </resources>

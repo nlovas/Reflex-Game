@@ -38,7 +38,8 @@
         android:textSize="25sp"
         android:layout_below="@+id/twoplayersbutton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:onClick="threeplayersselected"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -51,5 +52,6 @@
         android:width="150dp"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/threeplayersbutton"
-        android:layout_alignStart="@+id/threeplayersbutton" />
+        android:layout_alignStart="@+id/threeplayersbutton"
+        android:onClick="fourplayersselected"/>
 </RelativeLayout>

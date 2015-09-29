@@ -7,37 +7,40 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class GameshowActivity extends ActionBarActivity {
+public class ThreeplayerActivity extends ActionBarActivity {
 
-    /*
-    Gives the options for the number of players
-     */
+    public void p1of3click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, GameshowresultsActivity.class);
 
-    public void twoplayersselected(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, TwoplayerActivity.class);
+        intent.putExtra("winnername","Player 1");
         startActivity(intent);
     }
 
-    public void threeplayersselected(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, ThreeplayerActivity.class);
+    public void p2of3click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, GameshowresultsActivity.class);
+
+        intent.putExtra("winnername","Player 2");
         startActivity(intent);
     }
 
-    public void fourplayersselected(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, FourplayerActivity.class);
+    public void p3of3click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, GameshowresultsActivity.class);
+
+        intent.putExtra("winnername","Player 3");
         startActivity(intent);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.selectnumplayers);
+        setContentView(R.layout.activity_threeplayer);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_gameshow, menu);
+        getMenuInflater().inflate(R.menu.menu_threeplayer, menu);
         return true;
     }
 

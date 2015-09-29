@@ -48,6 +48,14 @@
             android:name=".YourtimewasActivity"
             android:label="@string/title_activity_yourtimewas" >
         </activity>
+        <activity
+            android:name=".ThreeplayerActivity"
+            android:label="@string/title_activity_threeplayer" >
+        </activity>
+        <activity
+            android:name=".FourplayerActivity"
+            android:label="@string/title_activity_fourplayer" >
+        </activity>
     </application>
 
 </manifest>
