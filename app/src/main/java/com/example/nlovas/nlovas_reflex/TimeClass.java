@@ -8,13 +8,19 @@ import android.widget.Toast;
 public class TimeClass {
 
     /*
-    Each indiviual reaction time
+    Each individual reaction time
      */
 
     private double start; //to capture latency, you need to have a start and end time
     private double end;
 
     private double millitime;
+
+    public TimeClass() {
+        start=0;
+        end=0;
+        millitime=0;
+    }
 
     //to get the start time
     public void startCapture(){

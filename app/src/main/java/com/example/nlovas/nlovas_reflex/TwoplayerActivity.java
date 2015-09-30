@@ -9,11 +9,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -24,6 +28,8 @@ public class TwoplayerActivity extends ActionBarActivity {
 
     /*
     Shows 2 buttons for player 1 and player 2 to click
+    The plan: put first object into gson, then for every click after that:
+    take object out of gson, ++ the score, then put it back in gson.
      */
 
     private TwoPlayerClass twoplayerclass = new TwoPlayerClass(); //p1 and p2's score are both 0
@@ -32,6 +38,9 @@ public class TwoplayerActivity extends ActionBarActivity {
 
     public void p1click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
+
+        //loadFromFile2p(); //pull from saved file
+
         twoplayerclass.setp1Score(); //player 1 gets a point
 
         saveInFile(); //save the status of these players to file.sav
@@ -42,6 +51,9 @@ public class TwoplayerActivity extends ActionBarActivity {
 
     public void p2click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
+
+       // loadFromFile2p();
+
         twoplayerclass.setp2Score(); //player 2 gets a point
 
         saveInFile(); //save the status of these players to file.sav
@@ -55,7 +67,7 @@ public class TwoplayerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.twoplayerbutton);
 
-
+        //saveInFile(); //save the initial scores of 0-0 into file
 
     }
 
@@ -100,6 +112,34 @@ public class TwoplayerActivity extends ActionBarActivity {
             throw new RuntimeException(e);
         }
     }
+
+
+
+    private void loadFromFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+        //loads the twoplayerclass status (object) from file.sav in the phone
+        /*
+        if theres time: 1-make this more generic so all gameshow classes can use it
+                        2-make it a class of its own
+         */
+
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-23
+            Type arraylistType = new TypeToken<TwoPlayerClass>() {}.getType();
+            twoplayerclass=gson.fromJson(in,arraylistType);
+
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            twoplayerclass= new TwoPlayerClass();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        }
+    }
+
 
 
 }

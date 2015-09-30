@@ -10,16 +10,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ReadyscreenActivity extends ActionBarActivity {
 
+    /*
+    Where the player can click the button to get their rection time. If theyre too fast, theyll be
+    redirected to the "too early!" screen.
+    Times are kept in Time objects and held in an Arraylist to be saved in file with gson.
+     */
+
+
     private double limit = (double) (Math.random() * 1991) + 10; //from http://stackoverflow.com/questions/7961788/math-random-explained 2015-09-27
-    //learned from http://www.tutorialspoint.com/java/lang/system_currenttimemillis.htm , 2015-09-27
+
 
     private CountDownTimer countdowntimer;
     private boolean timerstarted;
     private Button readyb;
-    public TimeClass time = new TimeClass(); //for getting latency
+    public TimeClass time = new TimeClass(); //for getting individual latencies
     private boolean ispressed=false; //prevents people from pressing again and again without going back
+
+    private ArrayList<TimeClass> times = new ArrayList<TimeClass>();
 
     public void setTimerstarted() {
         timerstarted = !timerstarted;

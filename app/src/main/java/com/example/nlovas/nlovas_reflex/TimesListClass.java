@@ -14,12 +14,12 @@ public class TimesListClass {
 
     private ArrayList<TimeClass> timeslist;
 
-    public TimesListClass(ArrayList<TimeClass> timeslist) {
-        this.timeslist = timeslist;
+    public TimesListClass() {
+        this.timeslist = new ArrayList<TimeClass>();
     }
 
     public void addTime(TimeClass time){
-
+        timeslist.add(time);
     }
 
     public Collection getTimes(){

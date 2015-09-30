@@ -22,7 +22,7 @@ public class GameshowstatsActivity extends ActionBarActivity {
     Where the gameshow statistics are shown, pulls the objects from file and prints them.
     Shows the number of times Player x pressed first in the game
      */
-    private TwoPlayerClass receivedtwoplayerclass = new TwoPlayerClass(); //does this need to change?
+    private TwoPlayerClass receivedtwoplayerclass; // = new TwoPlayerClass(); //does this need to change?
 
     private static final String FILENAME = "file.sav";
 
