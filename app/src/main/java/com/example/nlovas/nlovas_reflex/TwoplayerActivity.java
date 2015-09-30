@@ -20,13 +20,13 @@ public class TwoplayerActivity extends ActionBarActivity {
     /*
     Shows 2 buttons for player 1 and player 2 to click
      */
-
-    private TwoPlayerClass twopgame = new TwoPlayerClass(); //p1 and p2's sum are both 0
+    private TwoPlayerClass twoplayerclass = new TwoPlayerClass(); //p1 and p2's score are both 0
+    //want to have only one of these for the entire duration
 
 
     public void p1click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
-        twopgame.setP1sum(); //player 1 gets a point
+        twoplayerclass.setp1Score(); //player 1 gets a point
 
         //Gson gson = new Gson();
         //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-27
@@ -40,7 +40,7 @@ public class TwoplayerActivity extends ActionBarActivity {
 
     public void p2click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
-        twopgame.setP2sum(); //player 2 gets a point
+        twoplayerclass.setp2Score(); //player 2 gets a point
 
         intent.putExtra("winnername","Player 2");
         startActivity(intent);

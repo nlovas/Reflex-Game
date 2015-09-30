@@ -16,6 +16,14 @@ package com.example.nlovas.nlovas_reflex;
 
         You should have received a copy of the GNU General Public License
         along with this program.  If not, see <http://www.gnu.org/licenses/>.
+---------------------------------------------------------------------------------
+
+Portions of this page are modifications based on work created
+and shared by the Android Open Source Project and used according to terms described in the Creative Commons 2.5 Attribution License.
+"Building Your First App" https://developer.android.com/training/basics/firstapp/starting-activity.html, 2015-09-24
+
+
+
 */
 
 
@@ -35,21 +43,17 @@ the statistics option.
 
     private static final String FILENAME = "file.sav";
 
-    public void showprep(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void showprep(View view){
         Intent intent = new Intent(this, PrepActivity.class);
-       // Toast.makeText(getApplicationContext(), "Wow!!!.",  (testing code)
-         //       Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 
-    public void statselect(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void statselect(View view){
         Intent intent = new Intent(this, StatselectActivity.class);
-       // Toast.makeText(getApplicationContext(), "Wow!!!.",
-         //       Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 
-    public void gsmode(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void gsmode(View view){
         Intent intent = new Intent(this, GameshowActivity.class);
         // Toast.makeText(getApplicationContext(), "Wow!!!.",
         //       Toast.LENGTH_SHORT).show();

@@ -13,7 +13,6 @@ import android.widget.Toast;
 public class ReadyscreenActivity extends ActionBarActivity {
 
     private double limit = (double) (Math.random() * 1991) + 10; //from http://stackoverflow.com/questions/7961788/math-random-explained 2015-09-27
-    //private double starttime = (double)System.currentTimeMillis(); //grabs current time
     //learned from http://www.tutorialspoint.com/java/lang/system_currenttimemillis.htm , 2015-09-27
 
     private CountDownTimer countdowntimer;
@@ -60,7 +59,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
 
 
         countdowntimer = new Cdowntimer((long) limit, 100); //http://developer.android.com/reference/android/os/CountDownTimer.html  2015-09-27
-        //idea suggested by Linda Zhang, Second resource shared by Jillian Lovas
+        //idea suggested by Linda Zhang, Second resource suggested by Jillian Lovas
         //also http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html 2015-09-27
         countdowntimer.start();
         timerstarted = true;
