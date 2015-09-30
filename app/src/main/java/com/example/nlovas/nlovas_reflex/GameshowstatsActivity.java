@@ -4,13 +4,39 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 
 public class GameshowstatsActivity extends ActionBarActivity {
+
+    /*
+    Where the gameshow statistics are shown, pulls the objects from file and prints them.
+    Shows the number of times Player x pressed first in the game
+     */
+    private TwoPlayerClass receivedtwoplayerclass = new TwoPlayerClass(); //does this need to change?
+
+    private static final String FILENAME = "file.sav";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameshowstats);
+
+                loadFromFile2p();
+
+        TextView p1of2out = (TextView)findViewById(R.id.p1of2outtextView);
+        TextView p2of2out = (TextView)findViewById(R.id.p2of2outtextView);
+        p1of2out.setText(receivedtwoplayerclass.getp1Score() + "");
+        p2of2out.setText(receivedtwoplayerclass.getp2Score() + "");
     }
 
     @Override
@@ -33,5 +59,30 @@ public class GameshowstatsActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void loadFromFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+        //loads the twoplayerclass status (object) from file.sav in the phone
+        /*
+        if theres time: 1-make this more generic so all gameshow classes can use it
+                        2-make it a class of its own
+         */
+
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-23
+            Type arraylistType = new TypeToken<TwoPlayerClass>() {}.getType();
+            receivedtwoplayerclass=gson.fromJson(in,arraylistType);
+
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            receivedtwoplayerclass= new TwoPlayerClass();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        }
     }
 }

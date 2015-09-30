@@ -34,7 +34,7 @@ public class TwoplayerActivity extends ActionBarActivity {
         Intent intent = new Intent(this, GameshowresultsActivity.class);
         twoplayerclass.setp1Score(); //player 1 gets a point
 
-       // saveInFile();
+        saveInFile(); //save the status of these players to file.sav
 
         intent.putExtra("winnername","Player 1"); //learned how to pass strings using intents with https://youtu.be/ViwazAAR-vE, 2015-09-27
         startActivity(intent);
@@ -43,6 +43,8 @@ public class TwoplayerActivity extends ActionBarActivity {
     public void p2click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
         twoplayerclass.setp2Score(); //player 2 gets a point
+
+        saveInFile(); //save the status of these players to file.sav
 
         intent.putExtra("winnername","Player 2");
         startActivity(intent);
