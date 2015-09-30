@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.nlovas.nlovas_reflex.GameshowstatsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="2 player mode:"
+        android:id="@+id/twoplayermodetextView"
+        android:textSize="20dp"
+        android:layout_below="@+id/gameshowstatstitletextView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="3 player mode:"
+        android:id="@+id/threeplayermodetextView"
+        android:textSize="20dp"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/P2staticof2textView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="4 player mode:"
+        android:id="@+id/fourplayermodetextView"
+        android:textSize="20dp"
+        android:layout_above="@+id/p2staticof4textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Gameshow Stats"
+        android:id="@+id/gameshowstatstitletextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 1:"
+        android:id="@+id/P1staticof2textView"
+        android:layout_alignTop="@+id/twoplayermodetextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 2:"
+        android:id="@+id/P2staticof2textView"
+        android:layout_alignTop="@+id/P1staticof2textView"
+        android:layout_toEndOf="@+id/twoplayermodetextView"
+        android:layout_marginStart="28dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 1:"
+        android:id="@+id/P1staticof3textView"
+        android:layout_below="@+id/threeplayermodetextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 2:"
+        android:id="@+id/p2staticof3textView"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/P1staticof3textView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 3:"
+        android:id="@+id/P3staticof3textView"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/p2staticof3textView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 1:"
+        android:id="@+id/p1staticof4textView"
+        android:layout_marginTop="112dp"
+        android:layout_below="@+id/p2staticof3textView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 2:"
+        android:id="@+id/p2staticof4textView"
+        android:layout_above="@+id/p3staticof4textView"
+        android:layout_alignStart="@+id/p4staticof4textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 3:"
+        android:id="@+id/p3staticof4textView"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/p1staticof4textView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Player 4:"
+        android:id="@+id/p4staticof4textView"
+        android:layout_alignTop="@+id/p3staticof4textView"
+        android:layout_alignStart="@+id/P2staticof2textView" />
+</RelativeLayout>

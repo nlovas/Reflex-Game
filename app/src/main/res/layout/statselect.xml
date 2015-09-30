@@ -7,13 +7,13 @@
         android:layout_height="wrap_content"
         android:text="Reaction Times"
         android:id="@+id/reactionstatbutton"
-        android:layout_marginTop="109dp"
+        android:layout_marginTop="46dp"
         android:background="#8CC58C"
         android:height="100dp"
         android:textSize="25sp"
+        android:width="300dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:width="300dp" />
+        android:layout_alignStart="@+id/gameshowstatbutton" />
 
     <Button
         android:layout_width="wrap_content"
@@ -26,5 +26,19 @@
         android:textSize="25sp"
         android:layout_below="@+id/reactionstatbutton"
         android:layout_centerHorizontal="true"
-        android:width="300dp" />
+        android:width="300dp"
+        android:onClick="gameshowsts"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear Statistics"
+        android:id="@+id/clearstatsbutton"
+        android:layout_below="@+id/gameshowstatbutton"
+        android:layout_marginTop="58dp"
+        android:background="#8CC58C"
+        android:layout_alignStart="@+id/gameshowstatbutton"
+        android:layout_alignEnd="@+id/gameshowstatbutton"
+        android:height="100dp"
+        android:textSize="25sp" />
 </RelativeLayout>

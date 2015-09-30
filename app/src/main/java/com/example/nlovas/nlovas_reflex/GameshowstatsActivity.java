@@ -1,29 +1,22 @@
 package com.example.nlovas.nlovas_reflex;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class StatselectActivity extends ActionBarActivity {
+public class GameshowstatsActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.statselect);
-    }
-
-    public void gameshowsts(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, GameshowstatsActivity.class);
-        startActivity(intent);
+        setContentView(R.layout.activity_gameshowstats);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_statselect, menu);
+        getMenuInflater().inflate(R.menu.menu_gameshowstats, menu);
         return true;
     }
 

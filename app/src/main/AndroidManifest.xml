@@ -56,6 +56,10 @@
             android:name=".FourplayerActivity"
             android:label="@string/title_activity_fourplayer" >
         </activity>
+        <activity
+            android:name=".GameshowstatsActivity"
+            android:label="@string/title_activity_gameshowstats" >
+        </activity>
     </application>
 
 </manifest>

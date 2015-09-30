@@ -41,7 +41,7 @@ The first activity, shows the different play options and
 the statistics option.
   */
 
-    private static final String FILENAME = "file.sav";
+
 
     public void showprep(View view){
         Intent intent = new Intent(this, PrepActivity.class);
