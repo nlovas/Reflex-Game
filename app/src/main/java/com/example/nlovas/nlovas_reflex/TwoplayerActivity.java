@@ -25,14 +25,14 @@ import java.util.ArrayList;
 
 public class TwoplayerActivity extends ActionBarActivity {
 
-    private static final String FILENAME = "file.sav";
+
 
     /*
     Shows 2 buttons for player 1 and player 2 to click
-    The plan: put first object into gson, then for every click after that:
-    take object out of gson, ++ the score, then put it back in gson.
+    The plan: loadfromfile2p creates new object, which is pulled out, updated, then put back into file
+    every button click
      */
-
+    private static final String FILENAME = "file2p.sav";
     private TwoPlayerClass twoplayerclass = new TwoPlayerClass(); //p1 and p2's score are both 0
     //want to have only one of these for the entire duration
 
@@ -44,7 +44,7 @@ public class TwoplayerActivity extends ActionBarActivity {
 
         twoplayerclass.setp1Score(); //player 1 gets a point
 
-        saveInFile(); //save the status of these players to file.sav
+        saveInFile2p(); //save the status of these players to file
 
         intent.putExtra("winnername","Player 1"); //learned how to pass strings using intents with https://youtu.be/ViwazAAR-vE, 2015-09-27
         startActivity(intent);
@@ -57,7 +57,7 @@ public class TwoplayerActivity extends ActionBarActivity {
 
         twoplayerclass.setp2Score(); //player 2 gets a point
 
-        saveInFile(); //save the status of these players to file.sav
+        saveInFile2p(); //save the status of these players to file
 
         intent.putExtra("winnername","Player 2");
         startActivity(intent);
@@ -68,7 +68,7 @@ public class TwoplayerActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.twoplayerbutton);
 
-        //saveInFile(); //save the initial scores of 0-0 into file
+
 
     }
 
@@ -103,7 +103,8 @@ public class TwoplayerActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void saveInFile() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+    //put into a class of its own if time permits
+    private void saveInFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
         //saves the twoplayerclass status (object) into file.sav in the phone
         //saves both players at once
         try {
@@ -127,15 +128,15 @@ public class TwoplayerActivity extends ActionBarActivity {
 
     private void loadFromFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
         //loads the twoplayerclass status (object) from file.sav in the phone
-        
+
 
         try {
             FileInputStream fis = openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
             Gson gson = new Gson();
             //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-23
-            Type arraylistType = new TypeToken<TwoPlayerClass>() {}.getType();
-            twoplayerclass=gson.fromJson(in,arraylistType);
+            Type ptype = new TypeToken<TwoPlayerClass>() {}.getType();
+            twoplayerclass=gson.fromJson(in,ptype);
 
 
         } catch (FileNotFoundException e) {

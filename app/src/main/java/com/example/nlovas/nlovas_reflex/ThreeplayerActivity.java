@@ -7,26 +7,66 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
+
 public class ThreeplayerActivity extends ActionBarActivity {
 
-    public void p1of3click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, GameshowresultsActivity.class);
+     /*
+    Shows 3 buttons for player 1 and player 2 and 3 to click
+    The plan: loadfromfile3p creates new object, which is pulled out, updated, then put back into file
+    every button click
+     */
 
-        intent.putExtra("winnername","Player 1");
+    private static final String FILENAME = "file3p.sav";
+    private ThreePlayerClass threeplayerclass = new ThreePlayerClass(); // score are all 0
+    //want to have only one of these for the entire duration
+
+    public void p1of3click(View view) { //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, GameshowresultsActivity.class);
+        loadFromFile3p(); //pull from saved file
+
+        threeplayerclass.setp1Score(); //player 1 gets a point
+
+        saveInFile3p(); //save the status of these players to file
+
+        intent.putExtra("winnername", "Player 1");
         startActivity(intent);
     }
 
-    public void p2of3click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p2of3click(View view) { //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
-        intent.putExtra("winnername","Player 2");
+        loadFromFile3p(); //pull from saved file
+
+        threeplayerclass.setp2Score(); //player 1 gets a point
+
+        saveInFile3p(); //save the status of these players to file
+
+        intent.putExtra("winnername", "Player 2");
         startActivity(intent);
     }
 
-    public void p3of3click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p3of3click(View view) { //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
-        intent.putExtra("winnername","Player 3");
+        loadFromFile3p(); //pull from saved file
+
+        threeplayerclass.setp3Score(); //player 1 gets a point
+
+        saveInFile3p(); //save the status of these players to file.sav
+
+        intent.putExtra("winnername", "Player 3");
         startActivity(intent);
     }
 
@@ -57,5 +97,49 @@ public class ThreeplayerActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void saveInFile3p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+        //saves the twoplayerclass status (object) into file.sav in the phone
+        //saves both players at once
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME, 0);
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
+            Gson gson = new Gson();
+            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-30
+            gson.toJson(threeplayerclass, out);
+            out.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    private void loadFromFile3p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+        //loads the twoplayerclass status (object) from file.sav in the phone
+
+
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-23
+            Type arraylistType = new TypeToken<ThreePlayerClass>() {
+            }.getType();
+            threeplayerclass = gson.fromJson(in, arraylistType);
+
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            threeplayerclass = new ThreePlayerClass(); //happens the first time you play
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        }
     }
 }

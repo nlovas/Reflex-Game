@@ -9,8 +9,8 @@ public class TwoPlayerClass  {
     Storing the scores for p1 and p2 in two-player mode, using the player class
      */
 
-    private int p1;
-    private int p2;
+    protected int p1; //so inheriting classes can see/use them
+    protected int p2;
 
     public TwoPlayerClass() {
         this.p1 = 0;

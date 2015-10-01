@@ -25,15 +25,18 @@ public class GameshowstatsActivity extends ActionBarActivity {
     Where the gameshow statistics are shown, pulls the objects from file and prints them.
     Shows the number of times Player x pressed first in the game
      */
-    private TwoPlayerClass receivedtwoplayerclass; // = new TwoPlayerClass(); //does this need to change?
+    private TwoPlayerClass receivedtwoplayerclass; // = new TwoPlayerClass();
+    private ThreePlayerClass receivedthreeplayerclass; // = new TwoPlayerClass();
 
-    private static final String FILENAME = "file.sav";
+
+    private static final String FILENAME2p = "file2p.sav";
+    private static final String FILENAME3p = "file3p.sav";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameshowstats);
-
+//------2-player stuff----------------------------------------------------
                 loadFromFile2p();
 
         TextView p1of2out = (TextView)findViewById(R.id.p1of2outtextView);
@@ -41,7 +44,20 @@ public class GameshowstatsActivity extends ActionBarActivity {
         p1of2out.setText(receivedtwoplayerclass.getp1Score() + "");
         p2of2out.setText(receivedtwoplayerclass.getp2Score() + "");
 
-        saveInFile();
+        saveInFile2p();
+
+        //---3-player stuff ---------------------------------------------------
+
+        loadFromFile3p();
+
+        TextView p1of3out = (TextView)findViewById(R.id.p1of3outtextView);
+        TextView p2of3out = (TextView)findViewById(R.id.p2of3outtextView);
+        TextView p3of3out = (TextView)findViewById(R.id.p3of3outtextView);
+        p1of3out.setText(receivedthreeplayerclass.getp1Score() + "");
+        p2of3out.setText(receivedthreeplayerclass.getp2Score() + "");
+        p3of3out.setText(receivedthreeplayerclass.getp3Score() + "");
+
+        saveInFile3p();
 
     }
 
@@ -75,12 +91,12 @@ public class GameshowstatsActivity extends ActionBarActivity {
          */
 
         try {
-            FileInputStream fis = openFileInput(FILENAME);
+            FileInputStream fis = openFileInput(FILENAME2p);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
             Gson gson = new Gson();
             //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-23
-            Type arraylistType = new TypeToken<TwoPlayerClass>() {}.getType();
-            receivedtwoplayerclass=gson.fromJson(in,arraylistType);
+            Type ptype = new TypeToken<TwoPlayerClass>() {}.getType();
+            receivedtwoplayerclass=gson.fromJson(in,ptype);
 
 
         } catch (FileNotFoundException e) {
@@ -92,11 +108,11 @@ public class GameshowstatsActivity extends ActionBarActivity {
         }
     }
 
-    private void saveInFile() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+    private void saveInFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
         //saves the twoplayerclass status (object) into file.sav in the phone
         //saves both players at once
         try {
-            FileOutputStream fos = openFileOutput(FILENAME, 0);
+            FileOutputStream fos = openFileOutput(FILENAME2p, 0);
             BufferedWriter out= new BufferedWriter(new OutputStreamWriter(fos));
             Gson gson = new Gson();
             //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-30
@@ -111,4 +127,53 @@ public class GameshowstatsActivity extends ActionBarActivity {
             throw new RuntimeException(e);
         }
     }
+
+    //------3-player stuff-----------------------------------------------------------------
+
+    private void loadFromFile3p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+        //loads the twoplayerclass status (object) from file.sav in the phone
+        /*
+        if theres time: 1-make this more generic so all gameshow classes can use it
+                        2-make it a class of its own
+         */
+
+        try {
+            FileInputStream fis = openFileInput(FILENAME3p);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-23
+            Type ptype = new TypeToken<ThreePlayerClass>() {}.getType();
+            receivedthreeplayerclass=gson.fromJson(in,ptype);
+
+
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            receivedthreeplayerclass= new ThreePlayerClass();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void saveInFile3p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+        //saves the twoplayerclass status (object) into file.sav in the phone
+        //saves both players at once
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME3p, 0);
+            BufferedWriter out= new BufferedWriter(new OutputStreamWriter(fos));
+            Gson gson = new Gson();
+            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-30
+            gson.toJson(receivedthreeplayerclass, out);
+            out.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
