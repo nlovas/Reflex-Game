@@ -10,7 +10,7 @@ public class ThreePlayerClass extends TwoPlayerClass {
     inherits 1p and 2p and their setters/getters from twoplayerclass
      */
 
-    protected int p3;
+    protected int p3; //for fourplayerclass to access
 
     public ThreePlayerClass() {
         super(); //calls constructor from twoplayerclass

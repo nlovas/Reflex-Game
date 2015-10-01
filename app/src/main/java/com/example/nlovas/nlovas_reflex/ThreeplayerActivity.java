@@ -64,7 +64,7 @@ public class ThreeplayerActivity extends ActionBarActivity {
 
         threeplayerclass.setp3Score(); //player 1 gets a point
 
-        saveInFile3p(); //save the status of these players to file.sav
+        saveInFile3p(); //save the status of these players to file
 
         intent.putExtra("winnername", "Player 3");
         startActivity(intent);
