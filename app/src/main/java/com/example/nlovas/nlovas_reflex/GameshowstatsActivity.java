@@ -10,10 +10,13 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 
 public class GameshowstatsActivity extends ActionBarActivity {
@@ -37,6 +40,9 @@ public class GameshowstatsActivity extends ActionBarActivity {
         TextView p2of2out = (TextView)findViewById(R.id.p2of2outtextView);
         p1of2out.setText(receivedtwoplayerclass.getp1Score() + "");
         p2of2out.setText(receivedtwoplayerclass.getp2Score() + "");
+
+        saveInFile();
+
     }
 
     @Override
@@ -80,6 +86,26 @@ public class GameshowstatsActivity extends ActionBarActivity {
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             receivedtwoplayerclass= new TwoPlayerClass();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void saveInFile() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
+        //saves the twoplayerclass status (object) into file.sav in the phone
+        //saves both players at once
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME, 0);
+            BufferedWriter out= new BufferedWriter(new OutputStreamWriter(fos));
+            Gson gson = new Gson();
+            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-30
+            gson.toJson(receivedtwoplayerclass, out);
+            out.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             throw new RuntimeException(e);

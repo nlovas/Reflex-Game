@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -39,7 +40,7 @@ public class TwoplayerActivity extends ActionBarActivity {
     public void p1click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
-        //loadFromFile2p(); //pull from saved file
+        loadFromFile2p(); //pull from saved file
 
         twoplayerclass.setp1Score(); //player 1 gets a point
 
@@ -52,7 +53,7 @@ public class TwoplayerActivity extends ActionBarActivity {
     public void p2click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
-       // loadFromFile2p();
+        loadFromFile2p();
 
         twoplayerclass.setp2Score(); //player 2 gets a point
 
@@ -70,6 +71,15 @@ public class TwoplayerActivity extends ActionBarActivity {
         //saveInFile(); //save the initial scores of 0-0 into file
 
     }
+
+/*
+    @Override
+    protected void onStart() {
+        // TODO Auto-generated method stub
+        super.onStart();
+        loadFromFile2p();
+    }
+*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -117,10 +127,7 @@ public class TwoplayerActivity extends ActionBarActivity {
 
     private void loadFromFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
         //loads the twoplayerclass status (object) from file.sav in the phone
-        /*
-        if theres time: 1-make this more generic so all gameshow classes can use it
-                        2-make it a class of its own
-         */
+        
 
         try {
             FileInputStream fis = openFileInput(FILENAME);
@@ -133,7 +140,7 @@ public class TwoplayerActivity extends ActionBarActivity {
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
-            twoplayerclass= new TwoPlayerClass();
+            twoplayerclass= new TwoPlayerClass(); //happens the first time you play
         } catch (IOException e) {
             // TODO Auto-generated catch block
             throw new RuntimeException(e);
