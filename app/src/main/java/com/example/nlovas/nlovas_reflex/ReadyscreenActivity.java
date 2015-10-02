@@ -41,9 +41,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
     private Button readyb;
     public TimeClass time; //for getting individual latencies
     private boolean ispressed=false; //prevents people from pressing again and again without going back
-
-    //private ArrayList<TimeClass> times = new ArrayList<TimeClass>();
-    private TimesListClass times = new TimesListClass();
+    private TimesListClass times = new TimesListClass(); //holds all times
 
     public void setTimerstarted() {
         timerstarted = !timerstarted;
@@ -174,7 +172,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
-            times= new TimesListClass(); //happens the first time you play
+            times= new TimesListClass();
         } catch (IOException e) {
             // TODO Auto-generated catch block
             throw new RuntimeException(e);
