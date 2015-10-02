@@ -30,9 +30,12 @@ public class TimesListClass {
         timeslist.clear();
     }
 
-    //remove this, for testing purposes:
-    public TimeClass removeTime(){
-        return timeslist.get(0);
+    public int getSize(){
+        return timeslist.size();
+    }
+
+    public TimeClass removeTime(int location){
+        return timeslist.get(location);
     }
 
 }

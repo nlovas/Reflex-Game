@@ -26,6 +26,7 @@ call on the statistics class to get the correct information
 
     private static final String FILENAME = "react.sav";
     private TimesListClass receivedtimes = new TimesListClass();
+    private MaxClass maxclass = new MaxClass();
 
     //remove this, for testing purposes:
     private TimeClass time = new TimeClass();
@@ -38,10 +39,23 @@ call on the statistics class to get the correct information
         loadFromFileR(); //put data into receivedtimes
 
         //for testing purposes:
-        time=receivedtimes.removeTime();
-        TextView output = (TextView) this.findViewById(R.id.minallouttextView);
+        //time=receivedtimes.removeTime(0);
+        TextView maxalloutput = (TextView) this.findViewById(R.id.maxallouttextView);
+        TextView max10output = (TextView) this.findViewById(R.id.maxtenouttextView);
+        TextView max100output = (TextView) this.findViewById(R.id.maxhundredouttextView);
 
-        output.setText(time.getTime() + "");
+        //output.setText(time.getTime() + "");
+
+        //note to self: make sure -1's wont show and convert to seconds (method)
+        maxclass.setMaxAll(receivedtimes);
+        maxclass.setMax10(receivedtimes);
+        maxclass.setMax100(receivedtimes);
+        maxalloutput.setText(maxclass.getMaxAll() + "");
+        max10output.setText(maxclass.getMax10() + "");
+        max100output.setText(maxclass.getMax100() + "");
+
+        TextView test = (TextView) this.findViewById(R.id.minallouttextView);
+        test.setText(receivedtimes.getSize()+ "");
 
     }
 
