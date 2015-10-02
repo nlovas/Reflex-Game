@@ -57,6 +57,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
         } else if ((timerstarted == false)&&(ispressed==false)) { //if the timer is done, continue to the next screen to play
             time.endCapture();
             time.setTime(); //gets the latency
+            loadFromFileR();
             times.addTime(time); //add time to list
             saveInFileR();
 

@@ -26,4 +26,13 @@ public class TimesListClass {
         return timeslist;
     }
 
+    public void clearTimes(){
+        timeslist.clear();
+    }
+
+    //remove this, for testing purposes:
+    public TimeClass removeTime(){
+        return timeslist.get(0);
+    }
+
 }

@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -25,13 +27,21 @@ call on the statistics class to get the correct information
     private static final String FILENAME = "react.sav";
     private TimesListClass receivedtimes = new TimesListClass();
 
+    //remove this, for testing purposes:
+    private TimeClass time = new TimeClass();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_stats);
 
-        loadFromFileR();
+        loadFromFileR(); //put data into receivedtimes
 
+        //for testing purposes:
+        time=receivedtimes.removeTime();
+        TextView output = (TextView) this.findViewById(R.id.minallouttextView);
+
+        output.setText(time.getTime() + "");
 
     }
 
