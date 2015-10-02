@@ -45,10 +45,6 @@
             android:label="@string/title_activity_toosoon" >
         </activity>
         <activity
-            android:name=".YourtimewasActivity"
-            android:label="@string/title_activity_yourtimewas" >
-        </activity>
-        <activity
             android:name=".ThreeplayerActivity"
             android:label="@string/title_activity_threeplayer" >
         </activity>
@@ -59,6 +55,10 @@
         <activity
             android:name=".GameshowstatsActivity"
             android:label="@string/title_activity_gameshowstats" >
+        </activity>
+        <activity
+            android:name=".ReactionStatsActivity"
+            android:label="@string/title_activity_reaction_stats" >
         </activity>
     </application>
 

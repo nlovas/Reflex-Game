@@ -16,4 +16,5 @@
     <string name="title_activity_threeplayer">ThreeplayerActivity</string>
     <string name="title_activity_fourplayer">FourplayerActivity</string>
     <string name="title_activity_gameshowstats">GameshowstatsActivity</string>
+    <string name="title_activity_reaction_stats">ReactionStatsActivity</string>
 </resources>

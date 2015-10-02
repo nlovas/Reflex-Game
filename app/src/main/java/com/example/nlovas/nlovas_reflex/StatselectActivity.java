@@ -34,6 +34,11 @@ public class StatselectActivity extends ActionBarActivity {
         setContentView(R.layout.statselect);
     }
 
+    public void reactionstatsbtn(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, ReactionStatsActivity.class);
+        startActivity(intent);
+    }
+
     public void gameshowsts(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
         Intent intent = new Intent(this, GameshowstatsActivity.class);
         startActivity(intent);

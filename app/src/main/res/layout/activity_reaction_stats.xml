@@ -1,0 +1,221 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.nlovas.nlovas_reflex.ReactionStatsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Reaction-Time Statistics"
+        android:id="@+id/reactionstatstitletextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="All"
+        android:id="@+id/staticalltextView"
+        android:textSize="15dp"
+        android:layout_below="@+id/reactionstatstitletextView"
+        android:layout_alignEnd="@+id/staticavgtextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Last 10"
+        android:id="@+id/staticlasttentextView"
+        android:textSize="15dp"
+        android:layout_marginStart="67dp"
+        android:layout_alignBaseline="@+id/staticalltextView"
+        android:layout_alignBottom="@+id/staticalltextView"
+        android:layout_toEndOf="@+id/staticalltextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Last 100"
+        android:id="@+id/staticlasthundredtextView"
+        android:textSize="15dp"
+        android:layout_below="@+id/reactionstatstitletextView"
+        android:layout_alignEnd="@+id/reactionstatstitletextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Min"
+        android:id="@+id/staticmintextView"
+        android:layout_below="@+id/staticalltextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp"
+        android:textSize="15dp"
+        android:textColor="#008a5e" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Max"
+        android:id="@+id/staticmaxtextView"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/staticmintextView"
+        android:layout_alignParentStart="true"
+        android:textSize="15dp"
+        android:textColor="#00502f" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Average"
+        android:id="@+id/staticavgtextView"
+        android:layout_below="@+id/staticmaxtextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:textSize="15dp"
+        android:textColor="#007cc2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Median"
+        android:id="@+id/staticmediantextView"
+        android:textSize="15dp"
+        android:textColor="#003E61"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/avgallouttextView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/minallouttextView"
+        android:textColor="#008a5e"
+        android:layout_below="@+id/staticmintextView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/mintenouttextView"
+        android:textColor="#008a5e"
+        android:layout_below="@+id/staticmintextView"
+        android:layout_alignStart="@+id/staticlasttentextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/minhundredouttextView"
+        android:textColor="#008a5e"
+        android:layout_alignBaseline="@+id/mintenouttextView"
+        android:layout_alignBottom="@+id/mintenouttextView"
+        android:layout_alignStart="@+id/staticlasthundredtextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/maxallouttextView"
+        android:textColor="#00502f"
+        android:layout_below="@+id/staticmaxtextView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/maxtenouttextView"
+        android:textColor="#00502f"
+        android:layout_alignBaseline="@+id/maxallouttextView"
+        android:layout_alignBottom="@+id/maxallouttextView"
+        android:layout_alignStart="@+id/mintenouttextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/maxhundredouttextView"
+        android:layout_alignBottom="@+id/maxtenouttextView"
+        android:layout_alignStart="@+id/minhundredouttextView"
+        android:textColor="#00502f" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/avgallouttextView"
+        android:layout_below="@+id/staticavgtextView"
+        android:layout_alignParentStart="true"
+        android:textColor="#007cc2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/avgtenouttextView"
+        android:layout_alignBottom="@+id/avgallouttextView"
+        android:layout_alignStart="@+id/maxtenouttextView"
+        android:textColor="#007cc2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/avghundredouttextView"
+        android:layout_alignBottom="@+id/avgtenouttextView"
+        android:layout_alignStart="@+id/maxhundredouttextView"
+        android:textColor="#007cc2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/medallouttextView"
+        android:textColor="#003E61"
+        android:layout_below="@+id/staticmediantextView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/medtenouttextView"
+        android:layout_alignBottom="@+id/medallouttextView"
+        android:layout_alignStart="@+id/avgtenouttextView"
+        android:textColor="#003E61" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="None"
+        android:id="@+id/medhundredouttextView"
+        android:layout_alignBottom="@+id/medtenouttextView"
+        android:layout_alignStart="@+id/avghundredouttextView"
+        android:textColor="#003E61" />
+
+</RelativeLayout>
