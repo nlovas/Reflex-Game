@@ -26,6 +26,7 @@ public class StatselectActivity extends ActionBarActivity {
     private static final String FILENAME2p = "file2p.sav";
     private static final String FILENAME3p = "file3p.sav";
     private static final String FILENAME4p = "file4p.sav";
+    private static final String FILENAMEreact = "react.sav";
 
 
     @Override
@@ -52,6 +53,8 @@ public class StatselectActivity extends ActionBarActivity {
         saveInFile(clearthreeplayerclass,FILENAME3p);
          FourPlayerClass clearfourplayerclass = new FourPlayerClass();
         saveInFile(clearfourplayerclass,FILENAME4p);
+        TimesListClass cleartimes = new TimesListClass();
+        saveInFile(cleartimes, FILENAMEreact);
 
 
         Toast.makeText(getApplicationContext(), "Stats Cleared",
