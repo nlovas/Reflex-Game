@@ -27,9 +27,8 @@ call on the statistics class to get the correct information
     private static final String FILENAME = "react.sav";
     private TimesListClass receivedtimes = new TimesListClass();
     private MaxClass maxclass = new MaxClass();
+    private MinClass minclass = new MinClass();
 
-    //remove this, for testing purposes:
-    private TimeClass time = new TimeClass();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,25 +37,36 @@ call on the statistics class to get the correct information
 
         loadFromFileR(); //put data into receivedtimes
 
-        //for testing purposes:
-        //time=receivedtimes.removeTime(0);
         TextView maxalloutput = (TextView) this.findViewById(R.id.maxallouttextView);
         TextView max10output = (TextView) this.findViewById(R.id.maxtenouttextView);
         TextView max100output = (TextView) this.findViewById(R.id.maxhundredouttextView);
 
-        //output.setText(time.getTime() + "");
+        TextView minalloutput = (TextView) this.findViewById(R.id.minallouttextView);
+        TextView min10output = (TextView) this.findViewById(R.id.mintenouttextView);
+        TextView min100output = (TextView) this.findViewById(R.id.minhundredouttextView);
 
-        //note to self: make sure -1's wont show and convert to seconds (method)
         maxclass.setMaxAll(receivedtimes);
         maxclass.setMax10(receivedtimes);
         maxclass.setMax100(receivedtimes);
-        maxalloutput.setText(maxclass.getMaxAll() + "");
-        max10output.setText(maxclass.getMax10() + "");
-        max100output.setText(maxclass.getMax100() + "");
 
-        TextView test = (TextView) this.findViewById(R.id.minallouttextView);
-        test.setText(receivedtimes.getSize()+ "");
+        minclass.setMinAll(receivedtimes);
+        minclass.setMin10(receivedtimes);
+        minclass.setMin100(receivedtimes);
 
+       if(maxclass.getMaxAll()>(-1)) { //if times are unset, it will still read as "none"
+
+           maxalloutput.setText(maxclass.getMaxAll() + "ms");
+           max10output.setText(maxclass.getMax10() + "ms");
+           max100output.setText(maxclass.getMax100() + "ms");
+
+       }
+        if(minclass.getMinAll()>(-1)) { //if times are unset, it will still read as "none"
+
+            minalloutput.setText(minclass.getMinAll() + "ms");
+            min10output.setText(minclass.getMin10() + "ms");
+            min100output.setText(minclass.getMin100() + "ms");
+
+        }
     }
 
     @Override

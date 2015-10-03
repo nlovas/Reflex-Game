@@ -8,9 +8,9 @@ import java.util.ArrayList;
  */
 public class MaxClass {
 
-    private double maxall;
-    private double max10;
-    private double max100;
+    private int maxall;
+    private int max10;
+    private int max100;
 
     public MaxClass() { //negative numbers are impossible, so its a good way to check if this stat isnt applicable
         maxall=-1;
@@ -18,15 +18,15 @@ public class MaxClass {
         max100=-1;
     }
 
-    public double getMaxAll() {
+    public int getMaxAll() {
         return maxall;
     }
 
-    public double getMax10() {
+    public int getMax10() {
         return max10;
     }
 
-    public double getMax100() {
+    public int getMax100() {
         return max100;
     }
 
@@ -34,11 +34,11 @@ public class MaxClass {
 
         //double[] ms_holder = new double[timeslistclass.getSize()]; //a regular array with the same size as timeslistclass
 
-        double tempmax = -1;
+        int tempmax = -1;
 
         for(int i=0;i<timeslistclass.getSize();i++){
             if(timeslistclass.removeTime(i).getTime()>tempmax){ //if the time removed from list has a higher millis than tempmax
-                tempmax = timeslistclass.removeTime(i).getTime();   //replace tempmax's time
+                tempmax = (int)timeslistclass.removeTime(i).getTime();   //replace tempmax's time
             }
         }
 
@@ -50,13 +50,13 @@ public class MaxClass {
         //still gives you a result even if array is smaller than 10
 
         int size = timeslistclass.getSize();
-        double tempmax = -1;
+        int tempmax = -1;
 
         if(size<10){
 
             for(int i=0;i<size;i++){
                 if(timeslistclass.removeTime(i).getTime()>tempmax){ //if the time removed from list has a higher millis than tempmax
-                    tempmax = timeslistclass.removeTime(i).getTime();   //replace tempmax's time
+                    tempmax = (int)timeslistclass.removeTime(i).getTime();   //replace tempmax's time
                 }
             }
             max10=tempmax;
@@ -67,7 +67,7 @@ public class MaxClass {
             int start = size - 10;
             for (int i =start;i<size; i++) {
                 if (timeslistclass.removeTime(i).getTime() > tempmax) { //if the time removed from list has a higher millis than tempmax
-                    tempmax = timeslistclass.removeTime(i).getTime();   //replace tempmax's time
+                    tempmax = (int)timeslistclass.removeTime(i).getTime();   //replace tempmax's time
                 }
             }
             max10=tempmax;
@@ -79,13 +79,13 @@ public class MaxClass {
         //still gives you a result even if array is smaller than 100
 
         int size = timeslistclass.getSize();
-        double tempmax = -1;
+        int tempmax = -1;
 
         if(size<100){
 
             for(int i=0;i<size;i++){
                 if(timeslistclass.removeTime(i).getTime()>tempmax){ //if the time removed from list has a higher millis than tempmax
-                    tempmax = timeslistclass.removeTime(i).getTime();   //replace tempmax's time
+                    tempmax = (int)timeslistclass.removeTime(i).getTime();   //replace tempmax's time
                 }
             }
             max100=tempmax;
@@ -96,7 +96,7 @@ public class MaxClass {
             int start = size - 100;
             for (int i =start;i<size; i++) {
                 if (timeslistclass.removeTime(i).getTime() > tempmax) { //if the time removed from list has a higher millis than tempmax
-                    tempmax = timeslistclass.removeTime(i).getTime();   //replace tempmax's time
+                    tempmax = (int)timeslistclass.removeTime(i).getTime();   //replace tempmax's time
                 }
             }
             max100=tempmax;
