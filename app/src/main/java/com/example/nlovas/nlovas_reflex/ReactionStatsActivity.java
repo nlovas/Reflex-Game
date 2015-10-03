@@ -28,6 +28,7 @@ call on the statistics class to get the correct information
     private TimesListClass receivedtimes = new TimesListClass();
     private MaxClass maxclass = new MaxClass();
     private MinClass minclass = new MinClass();
+    private AvgClass avgclass = new AvgClass();
 
 
     @Override
@@ -45,6 +46,10 @@ call on the statistics class to get the correct information
         TextView min10output = (TextView) this.findViewById(R.id.mintenouttextView);
         TextView min100output = (TextView) this.findViewById(R.id.minhundredouttextView);
 
+        TextView avgalloutput = (TextView) this.findViewById(R.id.avgallouttextView);
+        TextView avg10output = (TextView) this.findViewById(R.id.avgtenouttextView);
+        TextView avg100output = (TextView) this.findViewById(R.id.avghundredouttextView);
+
         maxclass.setMaxAll(receivedtimes);
         maxclass.setMax10(receivedtimes);
         maxclass.setMax100(receivedtimes);
@@ -52,6 +57,10 @@ call on the statistics class to get the correct information
         minclass.setMinAll(receivedtimes);
         minclass.setMin10(receivedtimes);
         minclass.setMin100(receivedtimes);
+
+        avgclass.setAvgAll(receivedtimes);
+        avgclass.setAvg10(receivedtimes);
+        avgclass.setAvg100(receivedtimes);
 
        if(maxclass.getMaxAll()>(-1)) { //if times are unset, it will still read as "none"
 
@@ -65,6 +74,13 @@ call on the statistics class to get the correct information
             minalloutput.setText(minclass.getMinAll() + "ms");
             min10output.setText(minclass.getMin10() + "ms");
             min100output.setText(minclass.getMin100() + "ms");
+
+        }
+        if(avgclass.getAvgAll()>(-1)) { //if times are unset, it will still read as "none"
+
+            avgalloutput.setText((int)avgclass.getAvgAll() + "ms"); //cast as ints because doubles too big to print
+            avg10output.setText((int)avgclass.getAvg10() + "ms");
+            avg100output.setText((int)avgclass.getAvg100() + "ms");
 
         }
     }

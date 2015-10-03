@@ -32,7 +32,7 @@ public class MaxClass {
 
     public void setMaxAll(TimesListClass timeslistclass){
 
-        //double[] ms_holder = new double[timeslistclass.getSize()]; //a regular array with the same size as timeslistclass
+
 
         int tempmax = -1;
 
