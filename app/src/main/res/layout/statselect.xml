@@ -55,5 +55,6 @@
         android:background="#8CC58C"
         android:layout_below="@+id/clearstatsbutton"
         android:layout_alignStart="@+id/clearstatsbutton"
-        android:layout_alignEnd="@+id/clearstatsbutton" />
+        android:layout_alignEnd="@+id/clearstatsbutton"
+        android:onClick="emailstatsbtn"/>
 </RelativeLayout>
