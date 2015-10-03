@@ -29,6 +29,7 @@ call on the statistics class to get the correct information
     private MaxClass maxclass = new MaxClass();
     private MinClass minclass = new MinClass();
     private AvgClass avgclass = new AvgClass();
+    private MedianClass medclass = new MedianClass();
 
 
     @Override
@@ -50,6 +51,10 @@ call on the statistics class to get the correct information
         TextView avg10output = (TextView) this.findViewById(R.id.avgtenouttextView);
         TextView avg100output = (TextView) this.findViewById(R.id.avghundredouttextView);
 
+        TextView medalloutput = (TextView) this.findViewById(R.id.medallouttextView);
+        TextView med10output = (TextView) this.findViewById(R.id.medtenouttextView);
+        TextView med100output = (TextView) this.findViewById(R.id.medhundredouttextView);
+
         maxclass.setMaxAll(receivedtimes);
         maxclass.setMax10(receivedtimes);
         maxclass.setMax100(receivedtimes);
@@ -61,6 +66,10 @@ call on the statistics class to get the correct information
         avgclass.setAvgAll(receivedtimes);
         avgclass.setAvg10(receivedtimes);
         avgclass.setAvg100(receivedtimes);
+
+        medclass.setMedianAll(receivedtimes);
+        medclass.setMedian10(receivedtimes);
+        medclass.setMedian100(receivedtimes);
 
        if(maxclass.getMaxAll()>(-1)) { //if times are unset, it will still read as "none"
 
@@ -81,6 +90,13 @@ call on the statistics class to get the correct information
             avgalloutput.setText((int)avgclass.getAvgAll() + "ms"); //cast as ints because doubles too big to print
             avg10output.setText((int)avgclass.getAvg10() + "ms");
             avg100output.setText((int)avgclass.getAvg100() + "ms");
+
+        }
+        if(medclass.getMedAll()>(-1)) { //if times are unset, it will still read as "none"
+
+            medalloutput.setText((int)medclass.getMedAll() + "ms"); //cast as ints because doubles too big to print
+            med10output.setText((int)medclass.getMed10() + "ms");
+            med100output.setText((int)medclass.getMed100() + "ms");
 
         }
     }
