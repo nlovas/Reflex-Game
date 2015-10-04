@@ -46,10 +46,10 @@ limitations under the License.
      */
 
     private static final String FILENAME = "file3p.sav";
-    private ThreePlayerClass threeplayerclass = new ThreePlayerClass(); // score are all 0
-    //want to have only one of these for the entire duration
+    private ThreePlayerClass threeplayerclass = new ThreePlayerClass(); // scores are all 0
 
-    public void p1of3click(View view) { //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+
+    public void p1of3click(View view) { //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
         loadFromFile3p(); //pull from saved file
 
@@ -61,7 +61,7 @@ limitations under the License.
         startActivity(intent);
     }
 
-    public void p2of3click(View view) { //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p2of3click(View view) { //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
         loadFromFile3p(); //pull from saved file
@@ -74,12 +74,12 @@ limitations under the License.
         startActivity(intent);
     }
 
-    public void p3of3click(View view) { //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p3of3click(View view) { //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
         loadFromFile3p(); //pull from saved file
 
-        threeplayerclass.setp3Score(); //player 1 gets a point
+        threeplayerclass.setp3Score(); //player 3 gets a point
 
         saveInFile3p(); //save the status of these players to file
 
@@ -117,8 +117,7 @@ limitations under the License.
     }
 
     private void saveInFile3p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //saves the twoplayerclass status (object) into file.sav in the phone
-        //saves both players at once
+
         try {
             FileOutputStream fos = openFileOutput(FILENAME, 0);
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
@@ -138,7 +137,7 @@ limitations under the License.
 
 
     private void loadFromFile3p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //loads the twoplayerclass status (object) from file.sav in the phone
+
 
 
         try {

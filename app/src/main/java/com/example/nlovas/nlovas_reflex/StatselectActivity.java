@@ -103,7 +103,7 @@ limitations under the License.
     }
 
     private void saveInFile(Object object, String filename) { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        
+
         try {
             FileOutputStream fos = openFileOutput(filename, 0);
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));

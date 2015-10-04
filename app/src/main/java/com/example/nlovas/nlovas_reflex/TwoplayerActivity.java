@@ -51,10 +51,10 @@ limitations under the License.
      */
     private static final String FILENAME = "file2p.sav";
     private TwoPlayerClass twoplayerclass = new TwoPlayerClass(); //p1 and p2's score are both 0
-    //want to have only one of these for the entire duration
 
 
-    public void p1click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+
+    public void p1click(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
         loadFromFile2p(); //pull from saved file
@@ -67,7 +67,7 @@ limitations under the License.
         startActivity(intent);
     }
 
-    public void p2click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p2click(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
         loadFromFile2p();
@@ -136,7 +136,7 @@ limitations under the License.
 
 
     private void loadFromFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //loads the twoplayerclass status (object) from file.sav in the phone
+
 
 
         try {

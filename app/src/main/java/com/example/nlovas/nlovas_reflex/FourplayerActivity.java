@@ -68,7 +68,7 @@ and shared by the Android Open Source Project and used according to terms descri
 
         loadFromFile4p(); //pull from saved file
 
-        fourplayerclass.setp2Score(); //player 1 gets a point
+        fourplayerclass.setp2Score(); //player 2 gets a point
 
         saveInFile4p(); //save the status of these players to file
 
@@ -81,7 +81,7 @@ and shared by the Android Open Source Project and used according to terms descri
 
         loadFromFile4p(); //pull from saved file
 
-        fourplayerclass.setp3Score(); //player 1 gets a point
+        fourplayerclass.setp3Score(); //player 3 gets a point
 
         saveInFile4p(); //save the status of these players to file
 
@@ -94,7 +94,7 @@ and shared by the Android Open Source Project and used according to terms descri
 
         loadFromFile4p(); //pull from saved file
 
-        fourplayerclass.setp4Score(); //player 1 gets a point
+        fourplayerclass.setp4Score(); //player 4 gets a point
 
         saveInFile4p(); //save the status of these players to file
 

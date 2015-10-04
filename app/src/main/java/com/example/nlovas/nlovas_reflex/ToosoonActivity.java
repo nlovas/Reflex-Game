@@ -14,7 +14,7 @@ public class ToosoonActivity extends ActionBarActivity {
     clicking 'restart' sends them back to the preparation screen
      */
 
-    public void clickrestart(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void clickrestart(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, PrepActivity.class);
         startActivity(intent);
     }
