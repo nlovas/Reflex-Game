@@ -88,6 +88,7 @@ http://developer.android.com/reference/android/os/CountDownTimer.html,Android, 2
 
 Toast:  
 Jillian Lovas told me about the existence of Toasts so I could google them.
+http://javatechig.com/android/android-toast-example, JavatechIG, 2015-10-01
 
 Making and Installing APK's:  
 http://stackoverflow.com/questions/16709848/build-unsigned-apk-file-with-android-studio/26391505#26391505, sugested by Abram Hindle, Stack Overflow user marcin, 2015-10-04
