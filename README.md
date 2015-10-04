@@ -17,7 +17,7 @@ Nlovas-reflex is a reflex testing app for single and multiple players
         You should have received a copy of the GNU General Public License
         along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-----------------------------------------------------------------------------
+
 GSON's License:
 Copyright 2008 Google Inc. 
 
@@ -32,10 +32,10 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
----------------------------------------------------------------------------
+
 Portions of this page are modifications based on work created
 and shared by the Android Open Source Project and used according to terms described in the Creative Commons 2.5 Attribution License."Building Your First App" https://developer.android.com/training/basics/firstapp/starting-activity.html, Android 2015-09-24
----------------------------------------------------------------------------
+
 Stack Overflow:
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
