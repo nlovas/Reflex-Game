@@ -87,7 +87,7 @@ http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html, An
 http://developer.android.com/reference/android/os/CountDownTimer.html,Android, 2015-09-27 (Resource suggested by Jillian Lovas)
 
 Toast:  
-Jillian Lovas told me about the existence of Toasts so I could google them.
+Jillian Lovas told me about the existence of Toasts so I could google them.  
 http://javatechig.com/android/android-toast-example, JavatechIG, 2015-10-01
 
 Making and Installing APK's:  
