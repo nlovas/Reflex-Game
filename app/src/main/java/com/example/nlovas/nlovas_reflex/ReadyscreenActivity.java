@@ -30,6 +30,23 @@ public class ReadyscreenActivity extends ActionBarActivity {
     Where the player can click the button to get their rection time. If theyre too fast, theyll be
     redirected to the "too early!" screen.
     Times are kept in Time objects and held in an Arraylist to be saved in file with gson.
+
+    Gson:
+    Copyright 2008 Google Inc.Nicole Lovas 2015
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
      */
 
     private static final String FILENAME = "react.sav";
@@ -48,7 +65,8 @@ public class ReadyscreenActivity extends ActionBarActivity {
     } //toggles timerstarted to true/false
 
 
-    public void clickedred(View view) { //http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html , 2015-09-27
+    public void clickedred(View view) { //"Building Your First App",Android 2015-09-24
+    //http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html ,AndroidBite, 2015-09-27
         if ((timerstarted == true)&&(ispressed==false)) { //if the timer is still counting down, then your click is too early
             countdowntimer.cancel();
             timerstarted = false;
@@ -61,7 +79,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
             times.addTime(time); //add time to list
             saveInFileR();
 
-            readyb.setText("Your time was: " + (int) time.getTime() + "ms"); //problem solved with http://stackoverflow.com/questions/17958887/make-a-button-change-value-of-a-textview 2015-09-28
+            readyb.setText("Your time was: " + (int) time.getTime() + "ms"); //problem solved with Stack Overflow, User William Morrison, 2015-09-28
             ispressed = true;
                 }
             else{
@@ -80,11 +98,11 @@ public class ReadyscreenActivity extends ActionBarActivity {
         setContentView(R.layout.readybutton);
 
         readyb = (Button) this.findViewById(R.id.readybutton);
-        //readyb.setOnClickListener((View.OnClickListener) this);
 
 
-        countdowntimer = new Cdowntimer((long) limit, 100); //http://developer.android.com/reference/android/os/CountDownTimer.html  2015-09-27
-        //idea suggested by Linda Zhang, Second resource suggested by Jillian Lovas
+
+        countdowntimer = new Cdowntimer((long) limit, 100); //http://developer.android.com/reference/android/os/CountDownTimer.html,Android, 2015-09-27
+        //idea suggested by Linda Zhang, Second resource suggested by Jillian Lovas:
         //also http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html 2015-09-27
         countdowntimer.start();
         timerstarted = true;
@@ -112,9 +130,9 @@ public class ReadyscreenActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-//} everything is currently within the activity
 
-    class Cdowntimer extends CountDownTimer { //http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html 2015-09-27
+
+    class Cdowntimer extends CountDownTimer { //http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html,Androidbite, 2015-09-27
 
         public Cdowntimer(long startTime, long interval) {
             super(startTime, interval);
@@ -124,7 +142,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
         @Override
         public void onFinish() {
             setTimerstarted();
-            readyb.setText("Go!"); //Prof Scott Vanselow https://www.youtube.com/watch?v=OWLOMCvtSC8 2015-09-28
+            readyb.setText("Go!");
             time = new TimeClass(); //makes a new time every time you click
             time.startCapture();
         }
@@ -137,8 +155,7 @@ public class ReadyscreenActivity extends ActionBarActivity {
     }
 
     private void saveInFileR() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //saves the twoplayerclass status (object) into file.sav in the phone
-        //saves both players at once
+
         try {
             FileOutputStream fos = openFileOutput(FILENAME, 0);
             BufferedWriter out= new BufferedWriter(new OutputStreamWriter(fos));
@@ -159,8 +176,6 @@ public class ReadyscreenActivity extends ActionBarActivity {
 
 
     private void loadFromFileR() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-
-
 
         try {
             FileInputStream fis = openFileInput(FILENAME);

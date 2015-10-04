@@ -9,10 +9,12 @@ import android.view.View;
 
 public class PrepActivity extends ActionBarActivity {
 
-    public void prepok(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    /*
+    Shows a screen preparing the player to click
+     */
+
+    public void prepok(View view){ //"Building Your First App",Android 2015-09-24l
         Intent intent = new Intent(this, ReadyscreenActivity.class);
-        // Toast.makeText(getApplicationContext(), "Wow!!!.",  (testing code)
-        //       Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 

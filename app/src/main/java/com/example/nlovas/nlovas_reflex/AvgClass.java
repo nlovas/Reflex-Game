@@ -5,6 +5,10 @@ package com.example.nlovas.nlovas_reflex;
  */
 public class AvgClass {
 
+    /*
+    Holds the averages for all, last 10, and last 100
+     */
+
     private double avgall;
     private double avg10;
     private double avg100;

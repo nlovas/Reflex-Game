@@ -31,6 +31,23 @@ public class TwoplayerActivity extends ActionBarActivity {
     Shows 2 buttons for player 1 and player 2 to click
     The plan: loadfromfile2p creates new object, which is pulled out, updated, then put back into file
     every button click
+
+    Gson:
+    Copyright 2008 Google Inc., Nicole Lovas 2015
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
      */
     private static final String FILENAME = "file2p.sav";
     private TwoPlayerClass twoplayerclass = new TwoPlayerClass(); //p1 and p2's score are both 0
@@ -46,7 +63,7 @@ public class TwoplayerActivity extends ActionBarActivity {
 
         saveInFile2p(); //save the status of these players to file
 
-        intent.putExtra("winnername","Player 1"); //learned how to pass strings using intents with https://youtu.be/ViwazAAR-vE, 2015-09-27
+        intent.putExtra("winnername","Player 1"); // https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 
@@ -59,7 +76,7 @@ public class TwoplayerActivity extends ActionBarActivity {
 
         saveInFile2p(); //save the status of these players to file
 
-        intent.putExtra("winnername","Player 2");
+        intent.putExtra("winnername","Player 2"); // https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 
@@ -72,14 +89,6 @@ public class TwoplayerActivity extends ActionBarActivity {
 
     }
 
-/*
-    @Override
-    protected void onStart() {
-        // TODO Auto-generated method stub
-        super.onStart();
-        loadFromFile2p();
-    }
-*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

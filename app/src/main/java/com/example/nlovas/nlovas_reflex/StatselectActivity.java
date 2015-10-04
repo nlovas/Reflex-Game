@@ -21,6 +21,23 @@ public class StatselectActivity extends ActionBarActivity {
     /*
     User can choose to see their reaction stats, gameshow stats, clear their stats, or
     email their stats
+
+    Gson:
+    Copyright 2008 Google Inc.Nicole Lovas 2015
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
      */
 
     private static final String FILENAME2p = "file2p.sav";
@@ -35,17 +52,17 @@ public class StatselectActivity extends ActionBarActivity {
         setContentView(R.layout.statselect);
     }
 
-    public void reactionstatsbtn(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void reactionstatsbtn(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, ReactionStatsActivity.class);
         startActivity(intent);
     }
 
-    public void gameshowsts(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void gameshowsts(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, GameshowstatsActivity.class);
         startActivity(intent);
     }
 
-    public void clearstatsbtn(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void clearstatsbtn(View view){ //"Building Your First App", Android 2015-09-24
 
          TwoPlayerClass cleartwoplayerclass = new TwoPlayerClass();
         saveInFile(cleartwoplayerclass,FILENAME2p);
@@ -86,8 +103,7 @@ public class StatselectActivity extends ActionBarActivity {
     }
 
     private void saveInFile(Object object, String filename) { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //saves the twoplayerclass status (object) into file.sav in the phone
-        //saves both players at once
+        
         try {
             FileOutputStream fos = openFileOutput(filename, 0);
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));

@@ -226,5 +226,6 @@
         android:layout_below="@+id/p4staticof4textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
-        android:onClick="estatsbtn"/>
+        android:onClick="estatsbtn"
+        android:background="#8CC58C" />
 </RelativeLayout>

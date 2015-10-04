@@ -8,6 +8,10 @@ import java.util.ArrayList;
  */
 public class MaxClass {
 
+    /*
+    holds the maximums for all, last 10 and last 100
+     */
+
     private int maxall;
     private int max10;
     private int max100;

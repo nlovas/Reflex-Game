@@ -26,6 +26,23 @@ public class ThreeplayerActivity extends ActionBarActivity {
     Shows 3 buttons for player 1 and player 2 and 3 to click
     The plan: loadfromfile3p creates new object, which is pulled out, updated, then put back into file
     every button click
+
+    Gson:
+    Copyright 2008 Google Inc.Nicole Lovas 2015
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
      */
 
     private static final String FILENAME = "file3p.sav";
@@ -40,7 +57,7 @@ public class ThreeplayerActivity extends ActionBarActivity {
 
         saveInFile3p(); //save the status of these players to file
 
-        intent.putExtra("winnername", "Player 1");
+        intent.putExtra("winnername", "Player 1"); // https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 
@@ -53,7 +70,7 @@ public class ThreeplayerActivity extends ActionBarActivity {
 
         saveInFile3p(); //save the status of these players to file
 
-        intent.putExtra("winnername", "Player 2");
+        intent.putExtra("winnername", "Player 2"); // https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 
@@ -66,7 +83,7 @@ public class ThreeplayerActivity extends ActionBarActivity {
 
         saveInFile3p(); //save the status of these players to file
 
-        intent.putExtra("winnername", "Player 3");
+        intent.putExtra("winnername", "Player 3"); // https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 

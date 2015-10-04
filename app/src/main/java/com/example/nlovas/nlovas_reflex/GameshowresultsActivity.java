@@ -17,7 +17,7 @@ public class GameshowresultsActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameshowresults);
 
-        String winner = getIntent().getStringExtra("winnername"); //learned how to pass strings using intents with https://youtu.be/ViwazAAR-vE, 2015-09-27
+        String winner = getIntent().getStringExtra("winnername"); //https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         TextView output = (TextView)findViewById(R.id.twoplayeroutput);
         output.setText(winner);
     }

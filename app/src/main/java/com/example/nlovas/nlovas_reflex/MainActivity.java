@@ -1,8 +1,8 @@
 package com.example.nlovas.nlovas_reflex;
 
 /*
-<Nlovas-reflex is a reflex testing app for single and multiple players>
-        Copyright (C) <2015>  <Nicole Lovas, nlovas@ualberta.ca>
+Nlovas-reflex is a reflex testing app for single and multiple players
+        Copyright (C) 2015  Nicole Lovas, nlovas@ualberta.ca
 
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
@@ -43,20 +43,18 @@ the statistics option.
 
 
 
-    public void showprep(View view){
+    public void showprep(View view){//"Building Your First App",Android 2015-09-24
         Intent intent = new Intent(this, PrepActivity.class);
         startActivity(intent);
     }
 
-    public void statselect(View view){
+    public void statselect(View view){//"Building Your First App",Android 2015-09-24
         Intent intent = new Intent(this, StatselectActivity.class);
         startActivity(intent);
     }
 
-    public void gsmode(View view){
+    public void gsmode(View view){//"Building Your First App",Android 2015-09-24
         Intent intent = new Intent(this, GameshowActivity.class);
-        // Toast.makeText(getApplicationContext(), "Wow!!!.",
-        //       Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 

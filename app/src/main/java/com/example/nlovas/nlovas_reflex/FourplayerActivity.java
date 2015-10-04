@@ -22,10 +22,35 @@ import java.lang.reflect.Type;
 
 public class FourplayerActivity extends ActionBarActivity {
 
+    /*Gson:
+    Copyright 2008 Google Inc.,Nicole Lovas 2015
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-----------------------------------------------------------------
+Portions of this page are modifications based on work created
+and shared by the Android Open Source Project and used according to terms described in the Creative Commons 2.5 Attribution License.
+"Building Your First App" https://developer.android.com/training/basics/firstapp/starting-activity.html, 2015-09-24
+
+
+     */
+
+
+
+
     private static final String FILENAME = "file4p.sav";
     private FourPlayerClass fourplayerclass = new FourPlayerClass(); // score are all 0
 
-    public void p1of4click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p1of4click(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
         loadFromFile4p(); //pull from saved file
@@ -34,11 +59,11 @@ public class FourplayerActivity extends ActionBarActivity {
 
         saveInFile4p(); //save the status of these players to file
 
-        intent.putExtra("winnername","Player 1");
+        intent.putExtra("winnername","Player 1"); // https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 
-    public void p2of4click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p2of4click(View view){ //"Building Your First App",Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
         loadFromFile4p(); //pull from saved file
@@ -47,11 +72,11 @@ public class FourplayerActivity extends ActionBarActivity {
 
         saveInFile4p(); //save the status of these players to file
 
-        intent.putExtra("winnername","Player 2");
+        intent.putExtra("winnername","Player 2");// https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 
-    public void p3of4click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p3of4click(View view){ //"Building Your First App",Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
         loadFromFile4p(); //pull from saved file
@@ -60,11 +85,11 @@ public class FourplayerActivity extends ActionBarActivity {
 
         saveInFile4p(); //save the status of these players to file
 
-        intent.putExtra("winnername","Player 3");
+        intent.putExtra("winnername","Player 3"); // https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 
-    public void p4of4click(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void p4of4click(View view){ //"Building Your First App",Android 2015-09-24
         Intent intent = new Intent(this, GameshowresultsActivity.class);
 
         loadFromFile4p(); //pull from saved file
@@ -73,7 +98,7 @@ public class FourplayerActivity extends ActionBarActivity {
 
         saveInFile4p(); //save the status of these players to file
 
-        intent.putExtra("winnername","Player 4");
+        intent.putExtra("winnername","Player 4"); // https://youtu.be/ViwazAAR-vE, TZCoder, 2015-09-27
         startActivity(intent);
     }
 
@@ -108,8 +133,7 @@ public class FourplayerActivity extends ActionBarActivity {
 
 
     private void saveInFile4p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //saves the twoplayerclass status (object) into file.sav in the phone
-        //saves both players at once
+
         try {
             FileOutputStream fos = openFileOutput(FILENAME, 0);
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
@@ -129,8 +153,6 @@ public class FourplayerActivity extends ActionBarActivity {
 
 
     private void loadFromFile4p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //loads the twoplayerclass status (object) from file.sav in the phone
-
 
         try {
             FileInputStream fis = openFileInput(FILENAME);

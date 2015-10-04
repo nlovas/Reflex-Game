@@ -24,19 +24,36 @@ public class SendEmailActivity extends ActionBarActivity {
 
     /*
     Prompts the user for their email to send their statistics
+
+    Gson:
+    Copyright 2008 Google Inc.Nicole Lovas 2015
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
      */
 
     private static final String FILENAME2p = "file2p.sav";
     private static final String FILENAME3p = "file3p.sav";
     private static final String FILENAME4p = "file4p.sav";
     private static final String FILENAMEr = "react.sav";
-    //private static final String FILENAMEstats = "stats.sav";
+
 
     private TimesListClass receivedtimes = new TimesListClass();
     private TwoPlayerClass receivedtwoplayerclass;
     private ThreePlayerClass receivedthreeplayerclass;
     private FourPlayerClass receivedfourplayerclass;
-    //private StatisticsClass statsclass;
+
     private MaxClass maxclass = new MaxClass();
     private MinClass minclass = new MinClass();
     private AvgClass avgclass = new AvgClass();
@@ -45,12 +62,9 @@ public class SendEmailActivity extends ActionBarActivity {
     private EditText email_address;
 
 
-    /*public void backtomenubtn(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, StatselectActivity.class);
-        startActivity(intent);
-    }*/
 
-    public void emailstats(View view){ //learned + borrowed code from https://www.youtube.com/watch?v=V1tAL0kjjuU 2015-10-03
+
+    public void emailstats(View view){ // https://www.youtube.com/watch?v=V1tAL0kjjuU, profgustin, 2015-10-03
 
 
 
@@ -152,12 +166,6 @@ public class SendEmailActivity extends ActionBarActivity {
         loadFromFile2p();
         loadFromFile3p();
         loadFromFile4p();
-
-        //loadFromFilestats();
-        //maxclass = statsclass.getMax();
-        //minclass = statsclass.getMin();
-        //avgclass = statsclass.getAvg();
-        //medclass = statsclass.getMed();
 
 
         String msg = ("Gameshow Mode: \n" + "2-player: \n" + "Player 1: " + receivedtwoplayerclass.getp1Score() +
@@ -272,27 +280,6 @@ public class SendEmailActivity extends ActionBarActivity {
             throw new RuntimeException(e);
         }
     }
-/*
-    private void loadFromFilestats() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
 
-
-
-        try {
-            FileInputStream fis = openFileInput(FILENAMEstats);
-            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-            Gson gson = new Gson();
-            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-23
-            Type ptype = new TypeToken<StatisticsClass>() {}.getType();
-            statsclass=gson.fromJson(in,ptype);
-
-
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            statsclass= new StatisticsClass(new MaxClass(),new MinClass(), new MedianClass(), new AvgClass());
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            throw new RuntimeException(e);
-        }
-    }*/
 
 }

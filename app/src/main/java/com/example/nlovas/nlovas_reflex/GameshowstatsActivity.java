@@ -26,6 +26,23 @@ public class GameshowstatsActivity extends ActionBarActivity {
     /*
     Where the gameshow statistics are shown, pulls the objects from file and prints them.
     Shows the number of times Player x pressed first in the game
+
+    Gson:
+    Copyright 2008 Google Inc.Nicole Lovas 2015
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
      */
     private TwoPlayerClass receivedtwoplayerclass;
     private ThreePlayerClass receivedthreeplayerclass;
@@ -47,7 +64,7 @@ public class GameshowstatsActivity extends ActionBarActivity {
 
         TextView p1of2out = (TextView)findViewById(R.id.p1of2outtextView);
         TextView p2of2out = (TextView)findViewById(R.id.p2of2outtextView);
-        p1of2out.setText(receivedtwoplayerclass.getp1Score() + "");
+        p1of2out.setText(receivedtwoplayerclass.getp1Score() + ""); //problem solved with Stack Overflow, User William Morrison, 2015-09-28
         p2of2out.setText(receivedtwoplayerclass.getp2Score() + "");
 
         saveInFile2p();
@@ -82,7 +99,7 @@ public class GameshowstatsActivity extends ActionBarActivity {
 
     }
 
-    public void estatsbtn(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void estatsbtn(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, SendEmailActivity.class);
         startActivity(intent);
     }
@@ -110,14 +127,9 @@ public class GameshowstatsActivity extends ActionBarActivity {
     }
 
 
-   //stuff that works is below:
-
     private void loadFromFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //loads the twoplayerclass status (object) from file.sav in the phone
-        /*
-  !!!!!!!!! if theres time: 1-make this more generic so all gameshow classes can use it(tried, didnt work)
-                        2-make it a class of its own
-         */
+
+
 
         try {
             FileInputStream fis = openFileInput(FILENAME2p);
@@ -138,8 +150,7 @@ public class GameshowstatsActivity extends ActionBarActivity {
     }
 
     private void saveInFile2p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //saves the twoplayerclass status (object) into file.sav in the phone
-        //saves both players at once
+
         try {
             FileOutputStream fos = openFileOutput(FILENAME2p, 0);
             BufferedWriter out= new BufferedWriter(new OutputStreamWriter(fos));
@@ -161,10 +172,6 @@ public class GameshowstatsActivity extends ActionBarActivity {
 
     private void loadFromFile3p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
         //loads the twoplayerclass status (object) from file.sav in the phone
-        /*
-        if theres time: 1-make this more generic so all gameshow classes can use it
-                        2-make it a class of its own
-         */
 
         try {
             FileInputStream fis = openFileInput(FILENAME3p);
@@ -185,8 +192,7 @@ public class GameshowstatsActivity extends ActionBarActivity {
     }
 
     private void saveInFile3p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //saves the twoplayerclass status (object) into file.sav in the phone
-        //saves both players at once
+
         try {
             FileOutputStream fos = openFileOutput(FILENAME3p, 0);
             BufferedWriter out= new BufferedWriter(new OutputStreamWriter(fos));
@@ -207,8 +213,7 @@ public class GameshowstatsActivity extends ActionBarActivity {
     //---4-player stuff ------------------------------------------------------------------
 
     private void saveInFile4p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //saves the twoplayerclass status (object) into file.sav in the phone
-        //saves both players at once
+
         try {
             FileOutputStream fos = openFileOutput(FILENAME4p, 0);
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
@@ -228,7 +233,6 @@ public class GameshowstatsActivity extends ActionBarActivity {
 
 
     private void loadFromFile4p() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
-        //loads the twoplayerclass status (object) from file.sav in the phone
 
 
         try {

@@ -11,19 +11,23 @@ public class GameshowActivity extends ActionBarActivity {
 
     /*
     Gives the options for the number of players
+
+    Portions of this page are modifications based on work created
+and shared by the Android Open Source Project and used according to terms described in the Creative Commons 2.5 Attribution License.
+"Building Your First App" https://developer.android.com/training/basics/firstapp/starting-activity.html, 2015-09-24
      */
 
-    public void twoplayersselected(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void twoplayersselected(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, TwoplayerActivity.class);
         startActivity(intent);
     }
 
-    public void threeplayersselected(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void threeplayersselected(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, ThreeplayerActivity.class);
         startActivity(intent);
     }
 
-    public void fourplayersselected(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void fourplayersselected(View view){ //"Building Your First App", Android 2015-09-24
         Intent intent = new Intent(this, FourplayerActivity.class);
         startActivity(intent);
     }

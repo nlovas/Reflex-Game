@@ -24,12 +24,12 @@ public class TimeClass {
 
     //to get the start time
     public void startCapture(){
-        this.start=System.currentTimeMillis(); //learned from http://www.tutorialspoint.com/java/lang/system_currenttimemillis.htm , 2015-09-28
+        this.start=System.currentTimeMillis();
     }
 
     //get end time
     public void endCapture(){
-        this.end=System.currentTimeMillis(); //learned from http://www.tutorialspoint.com/java/lang/system_currenttimemillis.htm , 2015-09-27
+        this.end=System.currentTimeMillis();
     }
 
     public void setTime(){

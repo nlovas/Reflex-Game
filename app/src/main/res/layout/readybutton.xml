@@ -7,7 +7,7 @@ android:layout_width="match_parent" android:layout_height="match_parent">
     android:layout_height="wrap_content"
     android:text="Ready..."
     android:id="@+id/readybutton"
-    android:background="#CF2435"
+    android:background="#105B63"
     android:height="400dp"
     android:layout_centerVertical="true"
     android:layout_centerHorizontal="true"

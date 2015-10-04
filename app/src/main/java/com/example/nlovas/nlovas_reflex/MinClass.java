@@ -5,6 +5,10 @@ package com.example.nlovas.nlovas_reflex;
  */
 public class MinClass {
 
+    /*
+    holds the minimum of all, last 10, and last 100
+     */
+
     private int minall;
     private int min10;
     private int min100;
@@ -34,8 +38,8 @@ public class MinClass {
             int tempmin = (int) timeslistclass.removeTime(0).getTime();
 
             for (int i = 0; i < timeslistclass.getSize(); i++) {
-                if (timeslistclass.removeTime(i).getTime() < tempmin) { //if the time removed from list has a higher millis than tempmax
-                    tempmin = (int) timeslistclass.removeTime(i).getTime();   //replace tempmax's time
+                if (timeslistclass.removeTime(i).getTime() < tempmin) {
+                    tempmin = (int) timeslistclass.removeTime(i).getTime();
                 }
             }
 
@@ -53,8 +57,8 @@ public class MinClass {
             if (size < 10) {
 
                 for (int i = 0; i < size; i++) {
-                    if (timeslistclass.removeTime(i).getTime() < tempmin) { //if the time removed from list has a higher millis than tempmax
-                        tempmin = (int) timeslistclass.removeTime(i).getTime();   //replace tempmax's time
+                    if (timeslistclass.removeTime(i).getTime() < tempmin) {
+                        tempmin = (int) timeslistclass.removeTime(i).getTime();
                     }
                 }
                 min10 = tempmin;
@@ -64,8 +68,8 @@ public class MinClass {
 
                 int start = size - 10;
                 for (int i = start; i < size; i++) {
-                    if (timeslistclass.removeTime(i).getTime() < tempmin) { //if the time removed from list has a higher millis than tempmax
-                        tempmin = (int) timeslistclass.removeTime(i).getTime();   //replace tempmax's time
+                    if (timeslistclass.removeTime(i).getTime() < tempmin) {
+                        tempmin = (int) timeslistclass.removeTime(i).getTime();
                     }
                 }
                 min10 = tempmin;

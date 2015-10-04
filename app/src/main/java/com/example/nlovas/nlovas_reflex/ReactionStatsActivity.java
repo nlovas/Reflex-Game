@@ -27,16 +27,32 @@ public class ReactionStatsActivity extends ActionBarActivity {
 /*
 Shows the user various statistics of their reaction times
 call on the statistics class to get the correct information
+
+Gson:
+    Copyright 2008 Google Inc.Nicole Lovas 2015
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
  */
 
     private static final String FILENAME = "react.sav";
-   // private static final String FILENAMEstats = "stats.sav";
     private TimesListClass receivedtimes = new TimesListClass();
     private MaxClass maxclass = new MaxClass();
     private MinClass minclass = new MinClass();
     private AvgClass avgclass = new AvgClass();
     private MedianClass medclass = new MedianClass();
-  //  private StatisticsClass statsclass;
+
 
 
     @Override
@@ -107,19 +123,15 @@ call on the statistics class to get the correct information
 
         }
 
-       // statsclass = new StatisticsClass(maxclass,minclass,medclass,avgclass); //packed up for email delivery
-      //  saveInFilestats();
+
     }
 
-    public void emailstatsbtn(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+    public void emailstatsbtn(View view){ //"Building Your First App",Android 2015-09-24
         Intent intent = new Intent(this, SendEmailActivity.class);
         startActivity(intent);
     }
 
-    /*public void goback(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, StatselectActivity.class);
-        startActivity(intent);
-    }*/
+
 
 
     @Override
@@ -168,23 +180,5 @@ call on the statistics class to get the correct information
             throw new RuntimeException(e);
         }
     }
-/*
-    private void saveInFilestats() { //code from CMPUT301 lab, University of Alberta, 2015-09-30
 
-        try {
-            FileOutputStream fos = openFileOutput(FILENAMEstats, 0);
-            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
-            Gson gson = new Gson();
-            //https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, 2015-09-30
-            gson.toJson(statsclass, out);
-            out.flush();
-            fos.close();
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            throw new RuntimeException(e);
-        }
-    }*/
 }
