@@ -33,7 +33,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-Android:
+Android:  
 Portions of this page are modifications based on work created
 and shared by the Android Open Source Project and used according to terms described in the Creative Commons 2.5 Attribution License."Building Your First App" https://developer.android.com/training/basics/firstapp/starting-activity.html, Android 2015-09-24
 
