@@ -37,59 +37,59 @@ Android:
 Portions of this page are modifications based on work created
 and shared by the Android Open Source Project and used according to terms described in the Creative Commons 2.5 Attribution License."Building Your First App" https://developer.android.com/training/basics/firstapp/starting-activity.html, Android 2015-09-24
 
-Stack Overflow:
+Stack Overflow:  
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 
 
 
 
-Resources I referenced:
+Resources I referenced:  
 
 Watched the following videos from Abram Hindle's Student Picker Saga to learn how to set up layout files, storyboarding, making UML diagrams, setting up activities, joining activities together: Professor Abram Hindle: University of Alberta, (https://youtu.be/5PPD0ncJU1g, https://youtu.be/VKVYUXNuDDg, https://youtu.be/k9ZNbsc0Qgo, https://youtu.be/fxjIA4HIruU), 2015-09-24
 
-Referenced the “Building Your First App” tutorial for how to make buttons work,joining activities together
+Referenced the “Building Your First App” tutorial for how to make buttons work,joining activities together:  
 https://developer.android.com/training/basics/firstapp/starting-activity.html, Android, 2015-09-24
 
-Learned how to pass strings/ints using intents:
+Learned how to pass strings/ints using intents:  
 https://youtu.be/ViwazAAR-vE, TZCoder 2015-09-25
 
-Changing a TextView:
+Changing a TextView:  
 http://stackoverflow.com/questions/17958887/make-a-button-change-value-of-a-textview,William Morrison,2015-09-28
 https://www.youtube.com/watch?v=OWLOMCvtSC8, Prof. Scott Vanselow, 2015-09-28
 
-java math.random:
+java math.random:  
 http://stackoverflow.com/questions/7961788/math-random-explained, Stackoverflow user AusCBloke, 2015-09-25
 
-helped to understand gson:
+helped to understand gson:  
 http://stackoverflow.com/questions/447898/what-is-object-serialization, Stackoverflow user TarkaDaal, 2015-09-23
 https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html, Inderjeet Singh, Joel Leitch, Jesse Wilson, 2015-09-23
 and used code from the CMPUT 301 lab from TA's Joshua Campbell, Stephen Romansky, Shida He, and Ian Watts. University of Alberta, 2015-09-30
 
-All about Arraylist:
+All about Arraylist:  
 http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html, Oracle, 2015-10-01
 
-declaring an array:
+declaring an array:  
 http://stackoverflow.com/questions/1200621/declare-array-in-java,Stackoverflow users GhiOm and Joshua Taylor, 2015-10-02
 
-how to send an email:
+how to send an email:  
 https://www.youtube.com/watch?v=V1tAL0kjjuU, profgustin, 2015-10-03
 
-making a new line in java:
+making a new line in java:  
 http://stackoverflow.com/questions/7833689/java-string-new-line,Stackoverflow user Prince John Wesley, 2015-10-03
 
-java currentTimeMillis():
+java currentTimeMillis():  
 http://docs.oracle.com/javase/7/docs/api/java/lang/System.html, Oracle, 2015-09-28
 http://www.tutorialspoint.com/java/lang/system_currenttimemillis.htm, Tutorialspoint, 2015-09-28
 
-CountDownTimer:
+CountDownTimer:  
 http://androidbite.blogspot.ca/2012/11/android-count-down-timer-example.html, AndroidBite, 2015-09-27 (Idea suggested by Linda Zhang)
 http://developer.android.com/reference/android/os/CountDownTimer.html,Android, 2015-09-27 (Resource suggested by Jillian Lovas)
 
-Toast:
+Toast:  
 Jillian Lovas told me about the existence of Toasts so I could google them.
 
-Making and Installing APK's:
+Making and Installing APK's:  
 http://stackoverflow.com/questions/16709848/build-unsigned-apk-file-with-android-studio/26391505#26391505, sugested by Abram Hindle, Stack Overflow user marcin, 2015-10-04
 http://stackoverflow.com/questions/3480201/how-do-you-install-an-apk-file-in-the-android-emulator/3480235#3480235, suggested by Ian Watts, Stack OverFlow user Elenasys, 2015-10-04
 
