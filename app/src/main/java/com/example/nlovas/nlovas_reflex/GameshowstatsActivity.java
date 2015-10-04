@@ -1,9 +1,11 @@
 package com.example.nlovas.nlovas_reflex;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -28,11 +30,13 @@ public class GameshowstatsActivity extends ActionBarActivity {
     private TwoPlayerClass receivedtwoplayerclass;
     private ThreePlayerClass receivedthreeplayerclass;
     private FourPlayerClass receivedfourplayerclass;
-
+    private TimesListClass receivedtimes = new TimesListClass();
 
     private static final String FILENAME2p = "file2p.sav";
     private static final String FILENAME3p = "file3p.sav";
     private static final String FILENAME4p = "file4p.sav";
+    private static final String FILENAME = "react.sav";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +80,11 @@ public class GameshowstatsActivity extends ActionBarActivity {
 
         saveInFile4p();
 
+    }
+
+    public void estatsbtn(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
+        Intent intent = new Intent(this, SendEmailActivity.class);
+        startActivity(intent);
     }
 
     @Override

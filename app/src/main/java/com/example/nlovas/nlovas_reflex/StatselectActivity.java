@@ -61,10 +61,7 @@ public class StatselectActivity extends ActionBarActivity {
                  Toast.LENGTH_SHORT).show();
     }
 
-    public void emailstatsbtn(View view){ //altered code from "Building Your First App" tutorial https://developer.android.com/training/basics/firstapp/starting-activity.html
-        Intent intent = new Intent(this, SendEmailActivity.class);
-        startActivity(intent);
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

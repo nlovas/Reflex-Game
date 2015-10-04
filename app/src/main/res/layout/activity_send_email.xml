@@ -36,16 +36,7 @@
         android:layout_marginTop="73dp"
         android:background="#8CC58C"
         android:layout_below="@+id/enteremaileditText"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Return"
-        android:id="@+id/returnbutton"
-        android:layout_below="@+id/emailstatsbutton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp"
-        android:background="#8CC58C"
-        android:onClick="backtomenubtn"/>
+        android:onClick="emailstats"/>
+
 </RelativeLayout>

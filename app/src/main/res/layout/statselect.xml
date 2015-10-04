@@ -7,21 +7,21 @@
         android:layout_height="wrap_content"
         android:text="Reaction Times"
         android:id="@+id/reactionstatbutton"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="63dp"
         android:background="#8CC58C"
         android:height="90dp"
         android:textSize="25sp"
         android:width="300dp"
+        android:onClick="reactionstatsbtn"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/gameshowstatbutton"
-        android:onClick="reactionstatsbtn"/>
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gameshow Scores"
         android:id="@+id/gameshowstatbutton"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="73dp"
         android:background="#8CC58C"
         android:height="90dp"
         android:textSize="25sp"
@@ -35,26 +35,14 @@
         android:layout_height="wrap_content"
         android:text="Clear Statistics"
         android:id="@+id/clearstatsbutton"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="81dp"
         android:background="#8CC58C"
         android:height="90dp"
         android:textSize="25sp"
+        android:onClick="clearstatsbtn"
         android:layout_below="@+id/gameshowstatbutton"
         android:layout_alignStart="@+id/gameshowstatbutton"
-        android:layout_alignEnd="@+id/gameshowstatbutton"
-        android:onClick="clearstatsbtn"/>
+        android:layout_alignEnd="@+id/gameshowstatbutton" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email Statistics"
-        android:id="@+id/emailstatsbutton"
-        android:layout_marginTop="36dp"
-        android:height="90dp"
-        android:textSize="25sp"
-        android:background="#8CC58C"
-        android:layout_below="@+id/clearstatsbutton"
-        android:layout_alignStart="@+id/clearstatsbutton"
-        android:layout_alignEnd="@+id/clearstatsbutton"
-        android:onClick="emailstatsbtn"/>
+
 </RelativeLayout>

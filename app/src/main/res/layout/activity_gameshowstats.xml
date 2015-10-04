@@ -216,4 +216,15 @@
         android:id="@+id/p4of4outtextView"
         android:layout_alignTop="@+id/p4staticof4textView"
         android:layout_alignStart="@+id/p2of4outtextView" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Statistics"
+        android:id="@+id/ebutton"
+        android:layout_below="@+id/p4staticof4textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:onClick="estatsbtn"/>
 </RelativeLayout>
