@@ -47,12 +47,12 @@ limitations under the License.
     private TwoPlayerClass receivedtwoplayerclass;
     private ThreePlayerClass receivedthreeplayerclass;
     private FourPlayerClass receivedfourplayerclass;
-    private TimesListClass receivedtimes = new TimesListClass();
+
 
     private static final String FILENAME2p = "file2p.sav";
     private static final String FILENAME3p = "file3p.sav";
     private static final String FILENAME4p = "file4p.sav";
-    private static final String FILENAME = "react.sav";
+
 
 
     @Override
